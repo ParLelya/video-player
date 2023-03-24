@@ -1,32 +1,33 @@
 .header {
   width: 100%;
   height: 72px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 
-  svg.brand-logo {
-    top: 0;
-    left: 5px;
-
-    // &::after,
-    // &::before {
-    //   content: "";
-    //   height: 72px;
-    // }
+  img.brand-logo {
+    padding: 17px;
   }
 
-  nav {
-    display: flex;
-    align-items: center;
+  .nav {
     height: 100%;
-    left: 150px;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
 
     a {
-    //   width: 60px;
-    //   height: 100%;
-    //   font-style: normal;
-    //   font-weight: 400;
-    //   font-size: 16px;
-    //   line-height: 24px;
-    //   padding: 8px;
+      display: inline-block;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      padding: 23px 12px;
 
       &:hover,
       &:active {
@@ -35,10 +36,27 @@
       }
     }
   }
+  .ui-form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
-  .login {
-	padding: 1px 6px;
-	color: $white;
-	top: calc(50% - 26px/2);
+    .login {
+		padding: 1px 6px;
+		color: $white;
+		top: calc(50% - 26px / 2);
+		width: 90px;
+		height: 26px;
+		margin-left: 10px;
+
+      label {
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 24px;
+		padding: 5px;
+      }
+    }
   }
 }
