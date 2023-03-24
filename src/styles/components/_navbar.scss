@@ -1,88 +1,88 @@
 @import "../variables";
 
 header {
-	width: 100%;
-	height: 72px;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
+  width: 100%;
+  height: 72px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 
-	.header {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-evenly;
-		align-items: center;
-		max-width: 1104px;
-		margin: 0 2rem;
-	  
-		img.brand-logo {
-		  padding: 17px;
-		}
-	  
-		.nav {
-		  height: 100%;
-		  margin: 0 1rem;
-	  
-		  ul {
-			display: flex;
-			flex-wrap: wrap;
-			flex-direction: row;
-			justify-content: center;
-			align-items: center;
-		  }
-	  
-		  a {
-			display: inline-block;
-			font-style: normal;
-			font-weight: 400;
-			font-size: 16px;
-			line-height: 24px;
-			padding: 23px 12px;
-	  
-			&:hover,
-			&:active {
-			  color: $gold;
-			  border-bottom: 2px solid $gold;
-			}
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 1104px;
+    margin: 0 2rem;
 
-			&:last-of-type {
-				&:hover {
-					color: $white;
-					background-image: $gradient1;
-				}
-			}
-		  }
-		}
+    img.brand-logo {
+      padding: 17px;
+    }
 
-		.ui-form {
-		  display: flex;
-		  flex-wrap: wrap;
-		  flex-direction: row;
-		  justify-content: center;
-		  align-items: center;
-	  
-		  @media screen and (max-width: 800px) {
-			  margin: 1.5rem;
-			}
-	  
-		  .login {
-			padding: 1px 6px;
-			color: $white;
-			top: calc(50% - 26px / 2);
-			width: 90px;
-			height: 26px;
-			margin-left: 10px;
-			cursor: pointer;
-	  
-			label {
-			  font-weight: 500;
-			  font-size: 17px;
-			  line-height: 24px;
-			  padding: 5px;
-			}
-		  }
-		}
-	  }
+    .nav {
+      height: 100%;
+      margin: 0 1rem;
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+
+      a {
+        display: inline-block;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        padding: 23px 8px;
+
+        &:hover,
+        &:active {
+          color: $gold;
+          border-bottom: 2px solid $gold;
+        }
+
+        &:last-of-type {
+          &:hover {
+            color: $white;
+			border-bottom: 2px solid $white;
+			background-color: black;
+          }
+        }
+      }
+    }
+
+    .ui-form {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      @media screen and (max-width: 800px) {
+        margin: 1.5rem;
+      }
+
+      .login {
+        padding: 1px 6px;
+        color: $white;
+        top: calc(50% - 26px / 2);
+        width: 90px;
+        height: 26px;
+        margin-left: 10px;
+        cursor: pointer;
+
+        label {
+          font-weight: 500;
+          font-size: 17px;
+          line-height: 24px;
+          padding: 5px;
+        }
+      }
+    }
+  }
 }
-
