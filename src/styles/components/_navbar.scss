@@ -22,6 +22,7 @@ header {
 	  
 		.nav {
 		  height: 100%;
+		  margin: 0 1rem;
 	  
 		  ul {
 			display: flex;
@@ -41,8 +42,15 @@ header {
 	  
 			&:hover,
 			&:active {
-			  color: $gold !important;
+			  color: $gold;
 			  border-bottom: 2px solid $gold;
+			}
+
+			&:last-of-type {
+				&:hover {
+					color: $white;
+					background-image: $gradient1;
+				}
 			}
 		  }
 		}

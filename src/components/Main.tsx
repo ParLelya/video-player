@@ -1,11 +1,12 @@
 import React from 'react'
+import VideoPlayer from './VideoPlayer'
 
 const Main = () => {
 	return (
 		<main>
-			<div className="container">
-
-			</div>
+			{/* <div className="my-container">
+				<VideoPlayer />
+			</div> */}
 		</main>
 	)
 }

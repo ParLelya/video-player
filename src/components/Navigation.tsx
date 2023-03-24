@@ -24,9 +24,11 @@ const Navigation = () => {
 						Сериалы
 					</Link>
 
-					<a href="#!">
-						<i className="material-icons">settings_accessibility</i>
-					</a>
+					<Link to="/">
+						{/* <i className="material-icons">settings_accessibility</i> */}
+						<strong>Доступная среда</strong>
+					</Link>
+					{/*TODO: Сделать по клику отдельную страницу, поменять стиль выделения */}
 
 				</nav>
 				<div className='ui-form'>

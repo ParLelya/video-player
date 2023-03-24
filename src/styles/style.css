@@ -77,6 +77,7 @@ header .header img.brand-logo {
 }
 header .header .nav {
   height: 100%;
+  margin: 0 1rem;
 }
 header .header .nav ul {
   display: flex;
@@ -94,8 +95,12 @@ header .header .nav a {
   padding: 23px 12px;
 }
 header .header .nav a:hover, header .header .nav a:active {
-  color: #ba9d5a !important;
+  color: #ba9d5a;
   border-bottom: 2px solid #ba9d5a;
+}
+header .header .nav a:last-of-type:hover {
+  color: #fff;
+  background-image: radial-gradient(50% 50% at 50% 50%, rgba(0, 20, 36, 0) 32.81%, #001424 100%);
 }
 header .header .ui-form {
   display: flex;
@@ -127,6 +132,12 @@ header .header .ui-form .login label {
 
 main {
   flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  width: 100%;
 }
 
 footer {
