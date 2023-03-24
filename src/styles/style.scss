@@ -1,0 +1,18 @@
+@import "./normalize";
+@import "./variables";
+@import "./navbar";
+@import "./main";
+@import "./footer";
+
+.App {
+  background-color: $primary;
+  color: $white;
+  font-size: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex: 1 0 auto;
+  width: 100vw;
+  height: 100vh;
+}
