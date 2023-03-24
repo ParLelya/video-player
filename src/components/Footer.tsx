@@ -1,21 +1,25 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
 	return (
-		<footer className='page-footer'>
-			<div className="container">
-				<div className="row">
-					<div className="col l4 offset-l2 s12">
-						<h5>Разделы</h5>
+		<footer>
+
+			<div className='page-footer'>
+
+				<div className="container row links">
+					<div className="sections">
+						<h4>Разделы</h4>
 						<ul>
-							<li><a href="#!">Главная</a></li>
-							<li><a href="#!">Телеканалы</a></li>
-							<li><a href="#!">Фильмы</a></li>
-							<li><a href="#!">Сериалы</a></li>
+							<li><Link to="/">Главная</Link></li>
+							<li><Link to="/">Телеканалы</Link></li>
+							<li><Link to="/">Фильмы</Link></li>
+							<li><Link to="/">Сериалы</Link></li>
 						</ul>
 					</div>
-					<div className="col l4 offset-l2 s12">
-						<h5>Помощь</h5>
+
+					<div className="help">
+						<h4>Помощь</h4>
 						<ul>
 							<li><a href="#!">Справка</a></li>
 							<li><a href="#!">Обратная связь</a></li>
@@ -23,8 +27,16 @@ const Footer = () => {
 							<li><a href="#!">Корпоративный сайт</a></li>
 						</ul>
 					</div>
-					<img className="col l4 offset-l2 s12" alt='Мобильное приложение' src='./qr.svg' />
 				</div>
+
+				<div className="container footer-right-side">
+					<img alt='Мобильное приложение' src='./qr.svg' className="mobile-qr" />
+					<div className="contacts-cr">
+						<span className="contacts">app@kion.ru 8 800 250-08-04</span>
+						<span className="copyright">© 2023 ПАО «МТС». Все права защищены. 12+</span>
+					</div>
+				</div>
+
 			</div>
 		</footer>
 	)

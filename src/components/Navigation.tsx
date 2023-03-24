@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 
 const Navigation = () => {
 	return (
-		<header className='header'>
-			<img src='./logo.svg' className='brand-logo' alt='logo' />
+		<header>
+			<div className='header'>
+				<img src='./logo.svg' className='brand-logo' alt='logo' />
 				<nav className="nav">
 					<Link to="/">
 						Главная
@@ -31,10 +32,11 @@ const Navigation = () => {
 				<div className='ui-form'>
 					<SearchBar />
 					<button className='login'>
-						<i className="material-icons" style={{fontSize: '20px'}}>account_circle</i>
+						<i className="material-icons" style={{ fontSize: '20px' }}>account_circle</i>
 						<label>Войти</label>
 					</button>
 				</div>
+			</div>
 		</header>
 	)
 }
