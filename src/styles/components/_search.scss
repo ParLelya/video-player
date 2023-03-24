@@ -33,9 +33,12 @@
       padding: 8px 30px;
       outline: none;
       width: 300px;
+	  background-color: $second;
+	  color: $lightblue;
 
       &:focus {
-        border: 2px solid $dark-gray;
+        background-color: $white;
+		color: $primary;
       }
     }
   }

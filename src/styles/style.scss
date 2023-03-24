@@ -1,8 +1,6 @@
 @import "./normalize";
 @import "./variables";
-@import "./navbar";
-@import "./main";
-@import "./footer";
+@import "./components/all";
 
 .App {
   background-color: $primary;
