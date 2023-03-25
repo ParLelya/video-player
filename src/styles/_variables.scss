@@ -1,15 +1,11 @@
-//background
-$primary: #001424;
-$second: #122840;
-$shadow: #7b61ff12;
-
-//text
+$primary: rgb(0, 20, 36);
+$second: rgb(18, 40, 64);
+$shadow: rgba(123, 97, 255, 0.07);
 $white: #fff;
-$gold: #ba9d5a;
-$lightblue: #849ab2;
-$blue: #677f99;
-$pink: #a86ea7;
+$gold: rgb(186, 157, 90);
+$lightblue: rgb(132, 154, 178);
+$blue: rgb(103, 127, 153);
+$pink: rgb(168, 110, 167);
 
-//other
-$gradient1: radial-gradient(50% 50% at 50% 50%, rgba(0, 20, 36, 0) 32.81%, #001424 100%);
-$gradient2: linear-gradient(180deg, #001424 0%, rgba(0, 20, 36, 0) 100%);
+$gradient1: radial-gradient(rgba(0, 20, 36, 0) 32.81%, rgb(0, 20, 36) 100%);
+$gradient2: linear-gradient(180deg, rgb(0, 20, 36) 0%, rgba(0, 20, 36, 0) 100%);
