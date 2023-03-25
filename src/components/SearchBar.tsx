@@ -13,10 +13,10 @@ const SearchBar = () => {
 	// }, [])
 
 	return (
-		<div className='search'>
+		<div className='search hide-on-med-and-down'>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
-				height="48"
+				height="24"
 				viewBox="0 96 960 960"
 				fill='#849ab2'
 			>

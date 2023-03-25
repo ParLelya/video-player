@@ -8,7 +8,7 @@ const Footer = () => {
 			<div className='page-footer'>
 
 				<div className="container row links">
-					<div className="sections">
+					<div className="sections hide-on-med-and-down">
 						<h4>Разделы</h4>
 						<ul>
 							<li><Link to="/">Главная</Link></li>
@@ -37,6 +37,11 @@ const Footer = () => {
 					</div>
 				</div>
 
+			</div>
+			<div
+				className='show-on-medium-and-down'
+				style={{ height: '3em', position: 'fixed', bottom: '0', left: '0' }}
+				>
 			</div>
 		</footer>
 	)

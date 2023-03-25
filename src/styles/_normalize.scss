@@ -55,3 +55,23 @@ button {
 i.material-icons {
   transform: translateY(15%) !important;
 }
+
+@media only screen and (max-width: 992px) {
+  .show-on-medium-and-down {
+    display: block !important;
+  }
+
+  .hide-on-med-and-down {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .show-on-medium-and-down {
+    display: none !important;
+  }
+
+  .hide-on-med-and-down {
+    display: block !important;
+  }
+}

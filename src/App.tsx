@@ -3,6 +3,7 @@ import './styles/style.css'
 import Navigation from './components/Navigation';
 import Main from './components/Main';
 import Footer from './components/Footer';
+import NavMobile from './components/NavMobile';
 
 function App() {
 	return (
@@ -10,6 +11,7 @@ function App() {
 			<Navigation />
 			<Main />
 			<Footer />
+			<NavMobile/>
 		</div>
 	);
 }

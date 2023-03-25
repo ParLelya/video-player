@@ -16,7 +16,7 @@ header {
     max-width: 1104px;
     margin: 0 2rem;
 
-    img.brand-logo {
+    img.my-logo {
       padding: 17px;
     }
 
@@ -48,6 +48,7 @@ header {
 
         &:last-of-type {
           &:hover {
+			font-weight: bold;
             color: $white;
 			border-bottom: 2px solid $white;
 			background-color: black;
@@ -85,4 +86,43 @@ header {
       }
     }
   }
+}
+
+nav.nav-mobile {
+	width: 100%;
+	min-height: 2em;
+	bottom: 0;
+	left: 0;
+	position: sticky;
+	background-color: rgba(18,40,64,.85);
+	z-index: 10;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+      a {
+        display: inline-block;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        padding: 23px 8px;
+
+        &:hover,
+        &:active {
+          color: $gold;
+          border-bottom: 2px solid $gold;
+        }
+
+        &:last-of-type {
+          &:hover {
+			font-weight: bold;
+            color: $white;
+			border-bottom: 2px solid $white;
+			background-color: black;
+          }
+        }
+      }
 }

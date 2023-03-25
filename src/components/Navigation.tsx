@@ -6,8 +6,8 @@ const Navigation = () => {
 	return (
 		<header>
 			<div className='header'>
-				<img src='./logo.svg' className='brand-logo' alt='logo' />
-				<nav className="nav">
+				<img src='./logo.svg' className='my-logo' alt='logo' />
+				<nav className="nav hide-on-med-and-down">
 					<Link to="/">
 						Главная
 					</Link>
@@ -24,16 +24,16 @@ const Navigation = () => {
 						Сериалы
 					</Link>
 
-					<Link to="/">
+					<Link to="/accessibility">
 						{/* <i className="material-icons">settings_accessibility</i> */}
-						<strong>Доступная среда</strong>
+						Доступная среда
 					</Link>
 					{/*TODO: Сделать по клику отдельную страницу, поменять стиль выделения */}
 
 				</nav>
 				<div className='ui-form'>
 					<SearchBar />
-					<button className='login'>
+					<button className='login hide-on-med-and-down'>
 						<i className="material-icons" style={{ fontSize: '20px' }}>account_circle</i>
 						<label>Войти</label>
 					</button>
