@@ -96,8 +96,6 @@ header .header img.my-logo {
 header .header .nav {
   height: 100%;
   margin: 0 1rem;
-}
-header .header .nav ul {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -111,6 +109,7 @@ header .header .nav a {
   font-size: 16px;
   line-height: 24px;
   padding: 23px 8px;
+  border-bottom: 2px solid transparent;
 }
 header .header .nav a:hover, header .header .nav a:active {
   color: #ba9d5a;
@@ -143,11 +142,12 @@ header .header .ui-form .login {
   margin-left: 10px;
   cursor: pointer;
 }
-header .header .ui-form .login label {
-  font-weight: 500;
-  font-size: 17px;
+header .header .ui-form .login span {
+  font-weight: 400;
+  font-size: 1rem;
   line-height: 24px;
   padding: 5px;
+  cursor: pointer;
 }
 
 nav.nav-mobile {
@@ -363,6 +363,18 @@ form p input[type=range] {
     width: 100%;
     margin: 0.5rem;
   }
+}
+form select {
+  border: none;
+  color: #fff;
+  background: #122840;
+  border-radius: 6px;
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+}
+form select option {
+  font-size: inherit;
 }
 form button {
   background-color: #ba9d5a;

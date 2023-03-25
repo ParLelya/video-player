@@ -23,14 +23,11 @@ header {
     .nav {
       height: 100%;
       margin: 0 1rem;
-
-      ul {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-      }
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
 
       a {
         display: inline-block;
@@ -39,6 +36,7 @@ header {
         font-size: 16px;
         line-height: 24px;
         padding: 23px 8px;
+		border-bottom: 2px solid transparent;
 
         &:hover,
         &:active {
@@ -48,10 +46,10 @@ header {
 
         &:last-of-type {
           &:hover {
-			font-weight: bold;
+            font-weight: bold;
             color: $white;
-			border-bottom: 2px solid $white;
-			background-color: black;
+            border-bottom: 2px solid $white;
+            background-color: black;
           }
         }
       }
@@ -77,11 +75,12 @@ header {
         margin-left: 10px;
         cursor: pointer;
 
-        label {
-          font-weight: 500;
-          font-size: 17px;
+        span {
+          font-weight: 400;
+          font-size: 1rem;
           line-height: 24px;
           padding: 5px;
+		  cursor: pointer;
         }
       }
     }
@@ -89,40 +88,40 @@ header {
 }
 
 nav.nav-mobile {
-	width: 100%;
-	min-height: 2em;
-	bottom: 0;
-	left: 0;
-	position: fixed;
-	background-color: rgba(18,40,64,.85);
-	z-index: 10;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
+  width: 100%;
+  min-height: 2em;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(18, 40, 64, 0.85);
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 
-      a {
-        display: inline-block;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
-        padding: 23px 8px;
+  a {
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 23px 8px;
 
-        &:hover,
-        &:active {
-          color: $gold;
-          border-bottom: 2px solid $gold;
-        }
+    &:hover,
+    &:active {
+      color: $gold;
+      border-bottom: 2px solid $gold;
+    }
 
-        &:last-of-type {
-          &:hover {
-			font-weight: bold;
-            color: $white;
-			border-bottom: 2px solid $white;
-			background-color: black;
-          }
-        }
+    &:last-of-type {
+      &:hover {
+        font-weight: bold;
+        color: $white;
+        border-bottom: 2px solid $white;
+        background-color: black;
       }
+    }
+  }
 }

@@ -7,13 +7,13 @@ form {
   text-align: left;
   width: 80%;
   max-width: 1104px;
-  
+
   @media only screen and (max-width: 992px) {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	}
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
   legend {
     font-size: 1.5rem;
@@ -31,24 +31,38 @@ form {
       width: 50%;
       margin: 1rem 1.5rem;
 
-	  @media only screen and (max-width: 992px) {
-		width: 100%;
-		margin: 0.5rem;
-		}
+      @media only screen and (max-width: 992px) {
+        width: 100%;
+        margin: 0.5rem;
+      }
     }
+  }
+
+  select {
+    border: none;
+    color: $white;
+    background: $second;
+	border-radius: 6px;
+    margin: 1rem;
+	padding: 1rem;
+	font-size: 1rem;
+	
+	option {
+		font-size: inherit;
+	}
   }
 
   button {
     background-color: $gold;
-	color: $primary;
+    color: $primary;
     border-radius: 8px;
     margin: 0 35%;
     padding: 1rem;
     font-size: 1.5rem;
 
-	@media only screen and (max-width: 992px) {
-		margin: 0 auto;
-		width: 90%;
-	}
+    @media only screen and (max-width: 992px) {
+      margin: 0 auto;
+      width: 90%;
+    }
   }
 }

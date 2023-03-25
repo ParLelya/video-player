@@ -34,8 +34,7 @@ const Navigation = () => {
 				<div className='ui-form'>
 					<SearchBar />
 					<button className='login hide-on-med-and-down'>
-						<i className="material-icons" style={{ fontSize: '20px' }}>account_circle</i>
-						<label>Войти</label>
+						<span> <i className="material-icons" style={{ fontSize: '20px' }}>account_circle</i>Войти</span>
 					</button>
 				</div>
 			</div>
