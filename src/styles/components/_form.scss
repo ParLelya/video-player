@@ -5,13 +5,22 @@ form {
   border-radius: 8px;
   padding: 2rem;
   text-align: left;
+  width: 80%;
+  max-width: 1104px;
+  
+  @media only screen and (max-width: 992px) {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	}
 
   legend {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: 1rem 2rem;
 
     span {
@@ -20,7 +29,12 @@ form {
 
     input[type="range"] {
       width: 50%;
-      margin-left: 1.5rem;
+      margin: 1rem 1.5rem;
+
+	  @media only screen and (max-width: 992px) {
+		width: 100%;
+		margin: 0.5rem;
+		}
     }
   }
 
@@ -31,5 +45,10 @@ form {
     margin: 0 35%;
     padding: 1rem;
     font-size: 1.5rem;
+
+	@media only screen and (max-width: 992px) {
+		margin: 0 auto;
+		width: 90%;
+	}
   }
 }

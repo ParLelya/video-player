@@ -6,14 +6,14 @@ const Accessibility = () => {
 			<legend>Выберете цветовой режим или настройте самостоятельно</legend>
 			<p>
 				<label>
-					<input type="checkbox" />
+					<input type="checkbox" disabled />
 					<span>Режим для слабовидящих</span>
 				</label>
 			</p>
 			<p>
 				<label>
-					<input type="checkbox"/>
-					<span>Режим для людей с дальтонизмом</span>
+					<input type="checkbox" disabled />
+					<span>Режим для слабослышащих</span>
 				</label>
 			</p>
 			<p>
@@ -22,16 +22,34 @@ const Accessibility = () => {
 					<span>Черно-белый режим</span>
 				</label>
 			</p>
+			<p>
+				<label>
+					<input type="checkbox"/>
+					<span>Режим для людей с дальтонизмом</span>
+				</label>
+			</p>
 			<p className="range-field">
 				<label>
 					<span>Настройка яркости</span>
-					<input type="range" id="lightness" min="0" max="100" value='50'/>
+					<input type="range" id="lightness" min="0" max="100" />
 				</label>
 			</p>
 			<p className="range-field">
 				<label>
 					<span>Настройка контрастности</span>
-					<input type="range" id="contrast" min="-100" max="100" value='0'/>
+					<input type="range" id="contrast" min="-100" max="100" />
+				</label>
+			</p>
+			<p className="range-field">
+				<label>
+					<span>Настройка резкости</span>
+					<input type="range" id="lightness" min="0" max="100"/>
+				</label>
+			</p>
+			<p className="range-field">
+				<label>
+					<span>Настройка насыщенности</span>
+					<input type="range" id="contrast" min="-100" max="100" />
 				</label>
 			</p>
 			<button type='submit'>

@@ -38,11 +38,7 @@ const Footer = () => {
 				</div>
 
 			</div>
-			<div
-				className='show-on-medium-and-down'
-				style={{ height: '3em', position: 'fixed', bottom: '0', left: '0' }}
-				>
-			</div>
+
 		</footer>
 	)
 }

@@ -155,7 +155,7 @@ nav.nav-mobile {
   min-height: 2em;
   bottom: 0;
   left: 0;
-  position: sticky;
+  position: fixed;
   background-color: rgba(18, 40, 64, 0.85);
   z-index: 10;
   display: flex;
@@ -220,6 +220,7 @@ main .posters-images {
 main .posters-images img {
   padding: 5px 10px;
   width: 22%;
+  cursor: pointer;
 }
 
 footer {
@@ -284,6 +285,11 @@ footer .footer-right-side .contacts-cr {
   display: flex;
   flex-direction: column;
 }
+@media only screen and (max-width: 992px) {
+  footer .footer-right-side .contacts-cr {
+    margin-bottom: 8vh;
+  }
+}
 footer .footer-right-side span {
   color: #677f99;
   font-style: normal;
@@ -327,12 +333,22 @@ form {
   border-radius: 8px;
   padding: 2rem;
   text-align: left;
+  width: 80%;
+  max-width: 1104px;
+}
+@media only screen and (max-width: 992px) {
+  form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 form legend {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 form p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 1rem 2rem;
 }
 form p span {
@@ -340,7 +356,13 @@ form p span {
 }
 form p input[type=range] {
   width: 50%;
-  margin-left: 1.5rem;
+  margin: 1rem 1.5rem;
+}
+@media only screen and (max-width: 992px) {
+  form p input[type=range] {
+    width: 100%;
+    margin: 0.5rem;
+  }
 }
 form button {
   background-color: #ba9d5a;
@@ -349,6 +371,12 @@ form button {
   margin: 0 35%;
   padding: 1rem;
   font-size: 1.5rem;
+}
+@media only screen and (max-width: 992px) {
+  form button {
+    margin: 0 auto;
+    width: 90%;
+  }
 }
 
 .App {

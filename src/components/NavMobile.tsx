@@ -27,7 +27,7 @@ const NavMobile = () => {
 				<i className="material-icons" style={{ fontSize: '2rem' }}>account_circle</i><br/>
 				Ещё
 			</Link>
-			<Link to="/accessability">
+			<Link to="/accessibility">
 				<i className="material-icons" style={{ fontSize: '2rem' }}>settings_accessibility</i><br/>
 				Доступность
 			</Link>
