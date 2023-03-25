@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Home = () => {
+
 	return (
 		<div style={{ maxWidth: '90vw' }}>
 			<div className='posters'>

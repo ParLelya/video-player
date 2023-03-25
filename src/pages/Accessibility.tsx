@@ -1,36 +1,46 @@
 import React from 'react'
 import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 import { RootState } from '../store/store'
-import { 
-	setLightnessValue, 
-	setContrastValue, 
-	setSharpnessValue, 
+import {
+	setLightnessValue,
+	setContrastValue,
+	setSharpnessValue,
 	setSaturationValue,
-	setGrayScaleValue 
+	setGrayScaleValue
 } from '../slices/colorSlice'
 
-const Accessibility = () => {
+const Accessibility: React.FC = () => {
+
 	const dispatch = useAppDispatch()
-	const { lightnessValue, contrastValue, sharpnessValue, saturationValue } = useAppSelector((state: RootState) => state.color)
+	const { lightnessValue, contrastValue, sharpnessValue, saturationValue, grayScaleValue } = useAppSelector((state: RootState) => state.color)
 
 	const switchGreyShades = () => {
 		dispatch(setGrayScaleValue(100))
 	}
 
 	const setLightness = (event: React.ChangeEvent<HTMLInputElement>): void => {
+		console.log(event.target.value);	
 		dispatch(setLightnessValue(Number(event.target.value)))
 	}
 
 	const setContrast = (event: React.ChangeEvent<HTMLInputElement>): void => {
+		console.log(event.target.value);
 		dispatch(setContrastValue(Number(event.target.value)))
 	}
 
 	const setSharpness = (event: React.ChangeEvent<HTMLInputElement>): void => {
+		console.log(event.target.value);
 		dispatch(setSharpnessValue(Number(event.target.value)))
 	}
 
 	const setSaturation = (event: React.ChangeEvent<HTMLInputElement>): void => {
+		console.log(event.target.value);
 		dispatch(setSaturationValue(Number(event.target.value)))
+	}
+
+	const handleSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
+		event.preventDefault()
+		localStorage.setItem('colorPreset', String([lightnessValue, contrastValue, sharpnessValue, saturationValue, grayScaleValue]))
 	}
 
 	return (
@@ -117,7 +127,7 @@ const Accessibility = () => {
 					/>
 				</label>
 			</p>
-			<button type='submit'>
+			<button type='submit' onClick={handleSubmit}>
 				Применить настройки
 			</button>
 		</form>

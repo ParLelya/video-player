@@ -44,7 +44,6 @@ export const colorSlice = createSlice({
   },
 })
 
-
 export const { setIsAuth, setLightnessValue, setContrastValue, setSharpnessValue, setSaturationValue, setGrayScaleValue } = colorSlice.actions
 
 export default colorSlice.reducer
