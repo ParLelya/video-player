@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Routes } from "react-router-dom";
-import VideoPlayer from './VideoPlayer';
-import Accessibility from './Accessability';
+import VideoPlayer from '../pages/VideoPlayer';
+import Accessibility from '../pages/Accessibility';
 import Home from '../pages/Home';
 import NotFound from '../pages/NotFound';
 

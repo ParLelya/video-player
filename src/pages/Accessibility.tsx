@@ -3,18 +3,25 @@ import React from 'react'
 const Accessibility = () => {
 	return (
 		<form action="#" className='accessibility'>
-			<label>
-				<input type="checkbox" className="filled-in" />
-				<span>Режим для слабовидящих</span>
-			</label>
-			<label>
-				<input type="checkbox" className="filled-in" />
-				<span>Режим для людей с дальтонизмом</span>
-			</label>
-			<label>
-				<input type="checkbox" className="filled-in" />
-				<span>Черно-белый режим</span>
-			</label>
+			<legend>Выберете цветовой режим или настройте самостоятельно</legend>
+			<p>
+				<label>
+					<input type="checkbox" />
+					<span>Режим для слабовидящих</span>
+				</label>
+			</p>
+			<p>
+				<label>
+					<input type="checkbox"/>
+					<span>Режим для людей с дальтонизмом</span>
+				</label>
+			</p>
+			<p>
+				<label>
+					<input type="checkbox" />
+					<span>Черно-белый режим</span>
+				</label>
+			</p>
 			<p className="range-field">
 				<label>
 					<span>Настройка яркости</span>
@@ -27,6 +34,9 @@ const Accessibility = () => {
 					<input type="range" id="contrast" min="-100" max="100" />
 				</label>
 			</p>
+			<button type='submit'>
+				Применить настройки
+			</button>
 		</form>
 	)
 }

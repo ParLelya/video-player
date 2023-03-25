@@ -16,6 +16,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: #fff;
+  width: 100vw;
+  min-height: 100vh;
 }
 
 a,
@@ -184,15 +186,17 @@ nav.nav-mobile a:last-of-type:hover {
 main {
   flex: 1 0 auto;
   display: flex;
+  align-self: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 2rem 0;
   width: 100%;
+  max-width: 1104px;
 }
 main .posters {
   margin: 2rem auto;
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -210,11 +214,12 @@ main .posters-title a {
 }
 main .posters-images {
   display: flex;
-  width: 95%;
+  justify-content: space-between;
+  width: 100%;
 }
 main .posters-images img {
   padding: 5px 10px;
-  width: 10rem;
+  width: 22%;
 }
 
 footer {
@@ -317,6 +322,35 @@ footer .footer-right-side span {
   color: #001424;
 }
 
+form {
+  background: #1d334a;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: left;
+}
+form legend {
+  font-size: 2rem;
+}
+form p {
+  font-size: 1.5rem;
+  margin: 1rem 2rem;
+}
+form p span {
+  margin-left: 1rem;
+}
+form p input[type=range] {
+  width: 50%;
+  margin-left: 1.5rem;
+}
+form button {
+  background-color: #ba9d5a;
+  color: #001424;
+  border-radius: 8px;
+  margin: 0 35%;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
 .App {
   background-color: #001424;
   color: #fff;
@@ -325,8 +359,6 @@ footer .footer-right-side span {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  flex: 1 0 auto;
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%;
   overflow: hidden;
 }/*# sourceMappingURL=style.css.map */

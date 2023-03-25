@@ -41,12 +41,12 @@ const Home = () => {
 			<img
 				src='./banner.svg'
 				alt='banner'
-				style={{ marginTop: '2rem', width: '95%' }}
+				style={{ marginTop: '2rem', width: '80%' }}
 			/>
 			<img
 				src='./tv.svg'
 				alt='free tv channels'
-				style={{ marginTop: '2rem', width: '95%' }}
+				style={{ marginTop: '2rem', width: '80%' }}
 			/>
 		</div>
 	)

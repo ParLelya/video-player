@@ -1,0 +1,35 @@
+@import "../variables";
+
+form {
+  background: #1d334a;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: left;
+
+  legend {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin: 1rem 2rem;
+
+    span {
+      margin-left: 1rem;
+    }
+
+    input[type="range"] {
+      width: 50%;
+      margin-left: 1.5rem;
+    }
+  }
+
+  button {
+    background-color: $gold;
+	color: $primary;
+    border-radius: 8px;
+    margin: 0 35%;
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+}
