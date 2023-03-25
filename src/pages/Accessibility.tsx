@@ -2,7 +2,7 @@ import React from 'react'
 
 const Accessibility = () => {
 	return (
-		<form action="#" className='accessibility'>
+		<form className='accessibility'>
 			<legend>Выберете цветовой режим или настройте самостоятельно</legend>
 			<p>
 				<label>
