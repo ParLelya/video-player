@@ -3,7 +3,7 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 
 export interface ColorState {
   isAuth: boolean
-  lightnessValue: number
+  brightnessValue: number
   contrastValue: number
   sharpnessValue: number
   saturationValue: number
@@ -12,7 +12,7 @@ export interface ColorState {
 
 const initialState: ColorState = {
 	isAuth: false,
-	lightnessValue: 0,
+	brightnessValue: 0,
 	contrastValue: 100,
 	sharpnessValue: 0,
 	saturationValue: 100,
@@ -26,8 +26,8 @@ export const colorSlice = createSlice({
     setIsAuth(state, action: PayloadAction<boolean>) {
 		state.isAuth = action.payload
     },
-	setLightnessValue(state, action: PayloadAction<number>) {
-		state.lightnessValue = action.payload
+	setBrightnessValue(state, action: PayloadAction<number>) {
+		state.brightnessValue = action.payload
     },
 	setContrastValue(state, action: PayloadAction<number>) {
 		state.contrastValue = action.payload
@@ -44,6 +44,6 @@ export const colorSlice = createSlice({
   },
 })
 
-export const { setIsAuth, setLightnessValue, setContrastValue, setSharpnessValue, setSaturationValue, setGrayScaleValue } = colorSlice.actions
+export const { setIsAuth, setBrightnessValue, setContrastValue, setSharpnessValue, setSaturationValue, setGrayScaleValue } = colorSlice.actions
 
 export default colorSlice.reducer

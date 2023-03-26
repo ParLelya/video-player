@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 const SearchBar = () => {
 	const [value, setValue] = useState('')
@@ -7,10 +7,6 @@ const SearchBar = () => {
 	const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setValue(event.target.value)
 	}
-
-	// useEffect(() => {
-	// 	inputRef.current?.focus()
-	// }, [])
 
 	return (
 		<div className='search hide-on-med-and-down'>
