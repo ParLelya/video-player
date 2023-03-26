@@ -4,10 +4,6 @@
   .search {
     position: relative;
 
-    // @media screen and (max-width: 1024px) {
-    //   margin: 1rem 0;
-    // }
-
     svg {
 		width: 24px;
 		height: 24px;
@@ -21,7 +17,7 @@
 		border-radius: 8px;
 		padding: 8px 30px;
 		outline: none;
-		width: 10rem;
+		width: 12rem;
 		height: 44px;
 		background-color: $second;
 		color: $lightblue;

@@ -12,7 +12,7 @@ import PureJsModule from '../services/client'
 const VideoPlayer: React.FC = () => {
 
 	const media = useMemo(() => new (PureJsModule as any)(), [])
-	
+
 	const dispatch = useAppDispatch()
 	const { brightnessValue, contrastValue, sharpnessValue, saturationValue } =
 		useAppSelector((state: RootState) => state.color)
@@ -48,14 +48,6 @@ const VideoPlayer: React.FC = () => {
 
 	return (
 		<div className='video-player'>
-			<div className="option">
-				<input
-					id="use-stun"
-					type="checkbox"
-					ref={useStunRef}
-				/>
-				<label htmlFor="use-stun">Use STUN server</label>
-			</div>
 			<div style={{ display: 'flex' }}>
 				<button
 					ref={startRef}
@@ -94,8 +86,8 @@ const VideoPlayer: React.FC = () => {
 				>Тест</button> */}
 			</div>
 			<div id="media">
-				<audio id="audio" autoPlay={true}></audio>
-				<video id="video" autoPlay={true} playsInline={true}>
+				{/* <audio id="audio" autoPlay={true}></audio> */}
+				<video id="video" autoPlay={true} playsInline={true} controls muted loop>
 				</video>
 			</div>
 
@@ -149,6 +141,19 @@ const VideoPlayer: React.FC = () => {
 						/>
 					</label>
 				</p>
+				{!window.navigator.userAgent.includes('Firefox' || 'Chrome') && (
+					<div className="use-stun">
+						<label>
+							<input
+								id="use-stun"
+								type="checkbox"
+								ref={useStunRef}
+							/>
+							STUN сервер
+						</label>
+					</div>
+				)
+				}
 				<div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
 					<button id="test" type='submit' onClick={handleSubmit}>
 						Применить настройки

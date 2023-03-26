@@ -4,7 +4,7 @@ class PureJsModule {
 
   negotiate() {
     pc.addTransceiver("video", { direction: "recvonly" });
-    pc.addTransceiver("audio", { direction: "recvonly" });
+    // pc.addTransceiver("audio", { direction: "recvonly" });
     return pc
       .createOffer()
       .then(function (offer) {
@@ -79,7 +79,7 @@ class PureJsModule {
       sdpSemantics: "unified-plan",
     };
 
-    if (document.getElementById("use-stun").checked) {
+    if (window.navigator.userAgent.includes('Firefox') || document.getElementById("use-stun").checked) {
       config.iceServers = [{ urls: ["stun:stun.l.google.com:19302"] }];
     }
 
@@ -89,9 +89,10 @@ class PureJsModule {
     pc.addEventListener("track", function (evt) {
       if (evt.track.kind === "video") {
         document.getElementById("video").srcObject = evt.streams[0];
-      } else {
-        document.getElementById("audio").srcObject = evt.streams[0];
-      }
+      } 
+	//   else {
+    //     document.getElementById("audio").srcObject = evt.streams[0];
+    //   }
     });
 
     document.getElementById("start").style.display = "none";

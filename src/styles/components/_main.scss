@@ -11,12 +11,25 @@ main {
   width: 100%;
   max-width: 1104px;
 
+  img {
+	width: 80%;
+	margin: 2rem auto;
+	
+	@media only screen and (max-width: 992px) {
+		width: 100%;
+	  }
+  }
+
   .posters {
     margin: 2rem auto;
     width: 80%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+
+	@media only screen and (max-width: 992px) {
+		width: 100%;
+	  }
 
     &-title {
       display: flex;
@@ -63,6 +76,11 @@ main {
     align-items: center;
     justify-content: center;
     width: 100%;
+
+	#media {
+		width: 100%;
+		background: $second;
+	}
 
 	video {
 		width: 100%;

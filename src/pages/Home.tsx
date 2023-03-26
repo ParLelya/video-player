@@ -11,7 +11,7 @@ const Home = () => {
 					<a href='!'>Смотреть все <i className="large material-icons" style={{ fontSize: '1rem' }}>chevron_right</i></a>
 				</div>
 				<div className='posters-images'>
-				<Link to="/mediaplayer">
+					<Link to="/mediaplayer">
 						<img
 							src='./card1.svg'
 							alt='new films and series'
@@ -54,18 +54,15 @@ const Home = () => {
 			<img
 				src='./banner.svg'
 				alt='banner'
-				style={{ marginTop: '2rem', width: '80%' }}
 			/>
 			<img
 				src='./tv.svg'
 				alt='free tv channels'
-				style={{ margin: '2rem auto', width: '80%' }}
 				className='hide-on-med-and-down'
 			/>
 			<img
 				src='./tv-mob.svg'
 				alt='free tv channels'
-				style={{ margin: '2rem auto', width: '80%'}}
 				className='show-on-medium-and-down'
 			/>
 		</div>

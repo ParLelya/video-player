@@ -203,12 +203,26 @@ main {
   width: 100%;
   max-width: 1104px;
 }
+main img {
+  width: 80%;
+  margin: 2rem auto;
+}
+@media only screen and (max-width: 992px) {
+  main img {
+    width: 100%;
+  }
+}
 main .posters {
   margin: 2rem auto;
   width: 80%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+}
+@media only screen and (max-width: 992px) {
+  main .posters {
+    width: 100%;
+  }
 }
 main .posters-title {
   display: flex;
@@ -249,6 +263,10 @@ main .video-player {
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+main .video-player #media {
+  width: 100%;
+  background: rgb(18, 40, 64);
 }
 main .video-player video {
   width: 100%;
@@ -405,7 +423,7 @@ footer .footer-right-side span {
   border-radius: 8px;
   padding: 8px 30px;
   outline: none;
-  width: 10rem;
+  width: 12rem;
   height: 44px;
   background-color: rgb(18, 40, 64);
   color: rgb(132, 154, 178);
