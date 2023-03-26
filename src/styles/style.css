@@ -58,20 +58,20 @@ i.material-icons {
   transform: translateY(15%) !important;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1125px) {
   .show-on-medium-and-down {
-    display: block !important;
+    display: inline-block !important;
   }
   .hide-on-med-and-down {
     display: none !important;
   }
 }
-@media only screen and (min-width: 993px) {
+@media only screen and (min-width: 1125px) {
   .show-on-medium-and-down {
     display: none !important;
   }
   .hide-on-med-and-down {
-    display: block !important;
+    display: inline-block !important;
   }
 }
 header {
@@ -93,6 +93,11 @@ header .header {
 @media screen and (max-width: 992px) {
   header .header {
     justify-content: center;
+  }
+}
+@media screen and (max-width: 992px) {
+  header .header a {
+    align-self: center;
   }
 }
 header .header img.my-logo {
@@ -128,13 +133,12 @@ header .header .nav a:last-of-type:hover {
 }
 header .header .ui-form {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-@media screen and (max-width: 800px) {
+@media screen and (min-width: 1100px) {
   header .header .ui-form {
+    display: flex;
     margin: 1.5rem;
   }
 }
@@ -230,7 +234,7 @@ main .posters-images a {
 }
 @media only screen and (max-width: 992px) {
   main .posters-images a {
-    height: 50vh;
+    height: 18vh;
   }
 }
 main .posters-images a img {
@@ -391,7 +395,7 @@ footer .footer-right-side span {
   border-radius: 8px;
   padding: 8px 30px;
   outline: none;
-  width: 300px;
+  width: 10rem;
   height: 44px;
   background-color: rgb(18, 40, 64);
   color: rgb(132, 154, 178);
