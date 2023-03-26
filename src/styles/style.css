@@ -300,6 +300,16 @@ main .video-player form label span {
 main .video-player form label input {
   width: 50%;
 }
+main .video-player form .use-stun {
+  width: 30%;
+  padding: 0.5rem;
+}
+main .video-player form .use-stun label {
+  display: block;
+}
+main .video-player form .use-stun input#use-stun {
+  width: 20%;
+}
 main .video-player form button {
   width: 50%;
 }

@@ -119,6 +119,19 @@ main {
 		  }
       }
 
+	  .use-stun {
+		width: 30%;
+		padding: .5rem;
+
+		label{
+			display: block;	
+		}
+
+		input#use-stun {
+			width: 20%;
+		}
+	  }
+
       button {
         width: 50%;
       }
