@@ -42,7 +42,7 @@ const Navigation: React.FC = () => {
 					</Link>
 
 				</nav>
-				<div className='ui-form'>
+				
 					<SearchBar />
 					<button className='login hide-on-med-and-down' onClick={login}>
 						<span> <i className="material-icons" style={{ fontSize: '20px' }}>account_circle</i>
@@ -53,7 +53,7 @@ const Navigation: React.FC = () => {
 							}
 						</span>
 					</button>
-				</div>
+				
 			</div>
 		</header>
 	)

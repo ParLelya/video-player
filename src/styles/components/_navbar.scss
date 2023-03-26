@@ -13,13 +13,18 @@ header {
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-	width: 80%;
+    width: 80%;
     max-width: 1104px;
 
-	@media screen and (max-width: 992px) {
-		justify-content: center;
-      }
+    @media screen and (max-width: 992px) {
+      justify-content: center;
+    }
 
+    a {
+      @media screen and (max-width: 992px) {
+        align-self: center;
+      }
+    }
     img.my-logo {
       padding: 17px;
     }
@@ -40,7 +45,7 @@ header {
         font-size: 16px;
         line-height: 24px;
         padding: 23px 8px;
-		border-bottom: 2px solid $primary;
+        border-bottom: 2px solid $primary;
 
         &:hover,
         &:active {
@@ -61,12 +66,11 @@ header {
 
     .ui-form {
       display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
       justify-content: center;
       align-items: center;
 
-      @media screen and (max-width: 800px) {
+      @media screen and (min-width: 1100px) {
+		display: flex;
         margin: 1.5rem;
       }
 
@@ -84,7 +88,7 @@ header {
           font-size: 1rem;
           line-height: 24px;
           padding: 5px;
-		  cursor: pointer;
+          cursor: pointer;
         }
       }
     }

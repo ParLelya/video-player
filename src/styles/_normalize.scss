@@ -58,9 +58,9 @@ i.material-icons {
   transform: translateY(15%) !important;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1125px) {
   .show-on-medium-and-down {
-    display: block !important;
+    display: inline-block !important;
   }
 
   .hide-on-med-and-down {
@@ -68,12 +68,12 @@ i.material-icons {
   }
 }
 
-@media only screen and (min-width: 993px) {
+@media only screen and (min-width: 1125px) {
   .show-on-medium-and-down {
     display: none !important;
   }
 
   .hide-on-med-and-down {
-    display: block !important;
+    display: inline-block !important;
   }
 }
