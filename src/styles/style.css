@@ -90,6 +90,11 @@ header .header {
   width: 80%;
   max-width: 1104px;
 }
+@media screen and (max-width: 992px) {
+  header .header {
+    justify-content: center;
+  }
+}
 header .header img.my-logo {
   padding: 17px;
 }
@@ -240,6 +245,15 @@ main .video-player {
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+main .video-player #start, main .video-player #stop, main .video-player #test {
+  background-color: rgb(186, 157, 90);
+  color: rgb(0, 20, 36);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem;
+  font-size: 1rem;
+  height: 3.2rem;
 }
 main .video-player form {
   margin: 2rem auto;
