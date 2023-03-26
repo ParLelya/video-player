@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from '../hooks/hooks';
 import { setIsAuth } from '../slices/colorSlice';
 import { RootState } from '../store/store';
 
-const Navigation: React.FC  = () => {
+const Navigation: React.FC = () => {
 
 	const dispatch = useAppDispatch()
 	const { isAuth } = useAppSelector((state: RootState) => state.color)
@@ -17,7 +17,9 @@ const Navigation: React.FC  = () => {
 	return (
 		<header>
 			<div className='header'>
-				<img src='./logo.svg' className='my-logo' alt='logo' />
+				<Link to="/">
+					<img src='./logo.svg' className='my-logo' alt='logo' />
+				</Link>
 				<nav className="nav hide-on-med-and-down">
 					<Link to="/">
 						Главная
