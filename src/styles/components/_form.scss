@@ -1,12 +1,16 @@
 @import "../variables";
 
 form {
-  background: #1d334a;
+  background: transparent;
   border-radius: 8px;
   padding: 2rem;
   text-align: left;
   width: 80%;
   max-width: 1104px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   @media only screen and (max-width: 992px) {
     display: flex;
@@ -56,7 +60,6 @@ form {
     background-color: $gold;
     color: $primary;
     border-radius: 8px;
-    margin: 0 30%;
     padding: 1rem;
     font-size: 1.5rem;
 
