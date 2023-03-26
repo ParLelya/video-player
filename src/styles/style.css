@@ -246,6 +246,9 @@ main .video-player {
   justify-content: center;
   width: 100%;
 }
+main .video-player video {
+  width: 100%;
+}
 main .video-player #start, main .video-player #stop, main .video-player #test {
   background-color: rgb(186, 157, 90);
   color: rgb(0, 20, 36);

@@ -64,6 +64,10 @@ main {
     justify-content: center;
     width: 100%;
 
+	video {
+		width: 100%;
+	}
+
 	#start, #stop, #test {
 		background-color: $gold;
 		color: $primary;
