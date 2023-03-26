@@ -46,7 +46,7 @@ const VideoPlayer: React.FC = () => {
 			<form>
 				<p className="range-field">
 					<label>
-						Настройка яркости
+						<span>Настройка яркости</span>
 						<input
 							type="range"
 							id="lightness"
@@ -58,7 +58,7 @@ const VideoPlayer: React.FC = () => {
 				</p>
 				<p className="range-field">
 					<label>
-						Настройка контрастности
+						<span>Настройка контрастности</span>
 						<input
 							type="range"
 							id="contrast"
@@ -70,7 +70,7 @@ const VideoPlayer: React.FC = () => {
 				</p>
 				<p className="range-field">
 					<label>
-						Настройка резкости
+						<span>Настройка резкости</span>
 						<input
 							type="range"
 							id="sharpness"
@@ -82,7 +82,7 @@ const VideoPlayer: React.FC = () => {
 				</p>
 				<p className="range-field">
 					<label>
-						Настройка насыщенности
+						<span>Настройка насыщенности</span>
 						<input
 							type="range"
 							id="saturation"
@@ -92,9 +92,12 @@ const VideoPlayer: React.FC = () => {
 						/>
 					</label>
 				</p>
-				<button type='submit' onClick={handleSubmit}>
-					Применить настройки
-				</button>
+				<div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+					<button type='submit' onClick={handleSubmit}>
+						Применить настройки
+					</button>
+				</div>
+
 			</form>
 		</div>
 	)

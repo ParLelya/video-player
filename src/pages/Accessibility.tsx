@@ -19,25 +19,27 @@ const Accessibility: React.FC = () => {
 
 	return (
 		<form className='accessibility'>
-			<legend>Выберете цветовой режим</legend>
-			<p>
-				<label>
-					<input type="checkbox" disabled />
-					<span>Режим для слабовидящих</span>
-				</label>
-			</p>
-			<p>
-				<label>
-					<input type="checkbox" disabled />
-					<span>Режим для слабослышащих</span>
-				</label>
-			</p>
-			<p>
-				<label>
-					<input type="checkbox" onChange={switchGreyShades} />
-					<span>Черно-белый режим</span>
-				</label>
-			</p>
+			<legend>Выберете режим отображения</legend>
+			<div>
+				<p>
+					<label>
+						<input type="checkbox" disabled />
+						<span>Режим для слабовидящих</span>
+					</label>
+				</p>
+				<p>
+					<label>
+						<input type="checkbox" disabled />
+						<span>Режим для слабослышащих</span>
+					</label>
+				</p>
+				<p>
+					<label>
+						<input type="checkbox" onChange={switchGreyShades} />
+						<span>Черно-белый режим</span>
+					</label>
+				</p>
+			</div>
 			<p>
 				<label>
 					<span>Режим для людей с дальтонизмом</span>

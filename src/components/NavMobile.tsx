@@ -16,27 +16,31 @@ const NavMobile: React.FC = () => {
 	return (
 		<nav className="nav-mobile show-on-medium-and-down">
 			<Link to="/">
-				<i className="material-icons" style={{ fontSize: '2rem' }}>home</i><br/>
+				<i className="material-icons" style={{ fontSize: '2rem' }}>home</i><br />
 				Главная
 			</Link>
 			<Link to="/">
-				<i className="material-icons" style={{ fontSize: '2rem' }}>live_tv</i><br/>
+				<i className="material-icons" style={{ fontSize: '2rem' }}>live_tv</i><br />
 				ТВ
 			</Link>
 			<Link to="/">
-				<i className="material-icons" style={{ fontSize: '2rem' }}>local_movies</i><br/>
+				<i className="material-icons" style={{ fontSize: '2rem' }}>local_movies</i><br />
 				Фильмы
 			</Link>
 			<Link to="/">
-				<i className="material-icons" style={{ fontSize: '2rem' }}>video_library</i><br/>
+				<i className="material-icons" style={{ fontSize: '2rem' }}>video_library</i><br />
 				Сериалы
 			</Link>
 			<Link to="/" onClick={login}>
-				<i className="material-icons" style={{ fontSize: '2rem' }}>account_circle</i><br/>
-				Ещё
+				<i className="material-icons" style={{ fontSize: '2rem' }}>account_circle</i><br />
+				{
+					isAuth
+						? 'Выйти'
+						: 'Войти'
+				}
 			</Link>
 			<Link to="/accessibility">
-				<i className="material-icons" style={{ fontSize: '2rem' }}>settings_accessibility</i><br/>
+				<i className="material-icons" style={{ fontSize: '2rem' }}>settings_accessibility</i><br />
 				Доступность
 			</Link>
 		</nav>

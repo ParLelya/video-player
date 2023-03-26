@@ -8,7 +8,7 @@ import { RootState } from '../store/store';
 const Navigation: React.FC  = () => {
 
 	const dispatch = useAppDispatch()
-	const { isAuth } = useAppSelector((state: RootState) => state.color.isAuth)
+	const { isAuth } = useAppSelector((state: RootState) => state.color)
 
 	const login = () => {
 		dispatch(setIsAuth(!isAuth))

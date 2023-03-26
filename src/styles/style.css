@@ -87,8 +87,8 @@ header .header {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+  width: 80%;
   max-width: 1104px;
-  margin: 0 2rem;
 }
 header .header img.my-logo {
   padding: 17px;
@@ -109,7 +109,7 @@ header .header .nav a {
   font-size: 16px;
   line-height: 24px;
   padding: 23px 8px;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid rgb(0, 20, 36);
 }
 header .header .nav a:hover, header .header .nav a:active {
   color: rgb(186, 157, 90);
@@ -221,7 +221,12 @@ main .posters-images a {
   display: block;
   padding: 5px 10px;
   width: 22vw;
-  height: 30vh;
+  height: 40vh;
+}
+@media only screen and (max-width: 992px) {
+  main .posters-images a {
+    height: 50vh;
+  }
 }
 main .posters-images a img {
   width: 100%;
@@ -238,18 +243,41 @@ main .video-player {
 }
 main .video-player form {
   margin: 2rem auto;
-  width: 60%;
+  width: 70%;
+}
+@media only screen and (max-width: 992px) {
+  main .video-player form {
+    margin: 2rem 0;
+    width: 100%;
+  }
 }
 main .video-player form label,
 main .video-player form button {
   font-size: 1rem;
 }
-main .video-player form label {
-  margin: 1rem 1.5rem;
+main .video-player form .range-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
-main .video-player form input {
-  width: 40%;
-  flex: 2;
+@media only screen and (max-width: 992px) {
+  main .video-player form .range-field {
+    margin: 0.5rem 0;
+    width: 90%;
+  }
+}
+main .video-player form label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .video-player form label span {
+  padding: 1rem;
+}
+main .video-player form label input {
+  width: 50%;
 }
 main .video-player form button {
   width: 50%;
@@ -361,12 +389,16 @@ footer .footer-right-side span {
 }
 
 form {
-  background: #1d334a;
+  background: transparent;
   border-radius: 8px;
   padding: 2rem;
   text-align: left;
   width: 80%;
   max-width: 1104px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 @media only screen and (max-width: 992px) {
   form {
@@ -412,7 +444,6 @@ form button {
   background-color: rgb(186, 157, 90);
   color: rgb(0, 20, 36);
   border-radius: 8px;
-  margin: 0 30%;
   padding: 1rem;
   font-size: 1.5rem;
 }
