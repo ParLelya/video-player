@@ -7,10 +7,10 @@ import {
 	setSaturationValue,
 } from '../slices/colorSlice'
 import { RootState } from '../store/store'
-import PureJsModule from '../components/client'
+import PureJsModule from '../services/client'
 
 const VideoPlayer: React.FC = () => {
-	
+
 	const media = useMemo(() => new (PureJsModule as any)(), [])
 	
 	const dispatch = useAppDispatch()
@@ -51,8 +51,6 @@ const VideoPlayer: React.FC = () => {
 				<input
 					id="use-stun"
 					type="checkbox"
-					checked
-					disabled
 					ref={useStunRef}
 				/>
 				<label htmlFor="use-stun">Use STUN server</label>

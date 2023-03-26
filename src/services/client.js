@@ -1,8 +1,6 @@
-import React from "react";
-
 var pc = null;
 
-class PureJsModule extends React.Component {
+class PureJsModule {
 
   negotiate() {
     pc.addTransceiver("video", { direction: "recvonly" });
@@ -30,7 +28,7 @@ class PureJsModule extends React.Component {
       })
       .then(function () {
         var offer = pc.localDescription;
-        return fetch("/offer", {
+        return fetch("http://91.200.84.190/offer", {
           body: JSON.stringify({
             sdp: offer.sdp,
             type: offer.type,
@@ -63,7 +61,7 @@ class PureJsModule extends React.Component {
       ? document.getElementById("saturation").value
       : 0;
 
-    fetch("/settings", {
+    fetch("http://91.200.84.190/settings", {
       body: JSON.stringify({
         brightness: parseInt(brightness),
         contrast: parseInt(contrast),
