@@ -39,10 +39,11 @@ const VideoPlayer: React.FC = () => {
 
 	const handleSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
 		event.preventDefault()
-		localStorage.setItem('brightnessPreset', String(brightnessValue))
-		localStorage.setItem('contrastPreset', String(contrastValue))
-		localStorage.setItem('sharpnessPreset', String(sharpnessValue))
-		localStorage.setItem('saturationPreset', String(saturationValue))
+		// localStorage.setItem('brightnessPreset', String(brightnessValue))
+		// localStorage.setItem('contrastPreset', String(contrastValue))
+		// localStorage.setItem('sharpnessPreset', String(sharpnessValue))
+		// localStorage.setItem('saturationPreset', String(saturationValue))
+		media.test()
 	}
 
 	return (
@@ -67,7 +68,7 @@ const VideoPlayer: React.FC = () => {
 					style={{ display: 'none' }}
 					onClick={() => media.stop()}
 				>Стоп</button>
-				<div style={{ display: 'flex', flexDirection: 'column' }}>
+				{/* <div style={{ display: 'flex', flexDirection: 'column' }}>
 					<label htmlFor="contrast">контрастность</label>
 					<input
 						id="contrast"
@@ -86,11 +87,11 @@ const VideoPlayer: React.FC = () => {
 						placeholder="saturation"
 						type="number"
 					/>
-				</div>
-				<button
+				</div> */}
+				{/* <button
 					id="test"
 					onClick={() => media.test()}
-				>Тест</button>
+				>Тест</button> */}
 			</div>
 			<div id="media">
 				<audio id="audio" autoPlay={true}></audio>
@@ -125,6 +126,18 @@ const VideoPlayer: React.FC = () => {
 				</p>
 				<p className="range-field">
 					<label>
+						<span>Настройка насыщенности</span>
+						<input
+							type="range"
+							id="saturation"
+							min="0"
+							max="200"
+							onChange={setSaturation}
+						/>
+					</label>
+				</p>
+				<p className="range-field">
+					<label>
 						<span>Настройка резкости</span>
 						<input
 							type="range"
@@ -136,20 +149,8 @@ const VideoPlayer: React.FC = () => {
 						/>
 					</label>
 				</p>
-				<p className="range-field">
-					<label>
-						<span>Настройка насыщенности</span>
-						<input
-							type="range"
-							id="saturation"
-							min="0"
-							max="200"
-							onChange={setSaturation}
-						/>
-					</label>
-				</p>
 				<div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-					<button type='submit' onClick={handleSubmit}>
+					<button id="test" type='submit' onClick={handleSubmit}>
 						Применить настройки
 					</button>
 				</div>
