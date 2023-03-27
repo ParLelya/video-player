@@ -4,7 +4,7 @@ class Client {
 
   negotiate() {
     pc.addTransceiver("video", { direction: "recvonly" });
-    // pc.addTransceiver("audio", { direction: "recvonly" });
+    pc.addTransceiver("audio", { direction: "recvonly" });
     return pc
       .createOffer()
       .then(function (offer) {
@@ -90,9 +90,9 @@ class Client {
       if (evt.track.kind === "video") {
         document.getElementById("video").srcObject = evt.streams[0];
       } 
-	//   else {
-    //     document.getElementById("audio").srcObject = evt.streams[0];
-    //   }
+	  else {
+        document.getElementById("audio").srcObject = evt.streams[0];
+      }
     });
 
     document.getElementById("start").style.display = "none";
