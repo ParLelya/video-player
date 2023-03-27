@@ -60,7 +60,7 @@ i.material-icons {
 
 @media only screen and (max-width: 1125px) {
   .show-on-medium-and-down {
-    display: inline-block !important;
+    display: inline-block;
   }
 
   .hide-on-med-and-down {
@@ -74,6 +74,6 @@ i.material-icons {
   }
 
   .hide-on-med-and-down {
-    display: inline-block !important;
+    display: inline-block;
   }
 }

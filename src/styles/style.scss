@@ -4,7 +4,6 @@
 
 .App {
   background-color: $primary;
-  color: $white;
   font-size: 1rem;
   text-align: center;
   display: flex;
@@ -60,14 +59,8 @@ body {
 
 	//no green
 	&.deuteranopia { 
-		button {
-			background: $pink;
-		}
-		.login {
-			background: transparent;
-		}
 		color: $white !important;
-		filter: hue-rotate(30deg);
+		filter: hue-rotate(180deg);
 	}
 
 	//no blue
@@ -79,6 +72,6 @@ body {
 			background: transparent;
 		}
 		color: $white !important;
-		filter: hue-rotate(90deg);
+		filter: hue-rotate(30deg);
 	}
 }

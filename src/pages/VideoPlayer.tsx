@@ -88,7 +88,7 @@ const VideoPlayer: React.FC = () => {
 				>Тест</button> */}
 			</div>
 			<div id="media">
-				<audio id="audio" autoPlay={true}></audio>
+				{/* <audio id="audio" autoPlay={true}></audio> */}
 				<video id="video" autoPlay={true} playsInline={true} controls muted loop>
 				</video>
 			</div>

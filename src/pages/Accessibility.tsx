@@ -11,6 +11,10 @@ const Accessibility: React.FC = () => {
 	const [fzInc, setFzInc] = useState(false)
 	const handleFzChange = () => {
 		setFzInc(!fzInc)
+		setGray(false)
+		setNoRed(false)
+		setNoGreen(false)
+		setNoBlue(false)
 	}
 
 	const grayScaleRef = useRef<HTMLInputElement | null>(null)

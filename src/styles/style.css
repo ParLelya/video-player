@@ -60,7 +60,7 @@ i.material-icons {
 
 @media only screen and (max-width: 1125px) {
   .show-on-medium-and-down {
-    display: inline-block !important;
+    display: inline-block;
   }
   .hide-on-med-and-down {
     display: none !important;
@@ -71,7 +71,7 @@ i.material-icons {
     display: none !important;
   }
   .hide-on-med-and-down {
-    display: inline-block !important;
+    display: inline-block;
   }
 }
 header {
@@ -167,11 +167,6 @@ nav.nav-mobile {
   position: fixed;
   background-color: rgba(18, 40, 64, 0.85);
   z-index: 10;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 }
 nav.nav-mobile a {
   display: inline-block;
@@ -179,7 +174,8 @@ nav.nav-mobile a {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  padding: 23px 8px;
+  padding: 23px 10px;
+  border-bottom: 2px solid rgba(18, 40, 64, 0.85);
 }
 nav.nav-mobile a:hover, nav.nav-mobile a:active {
   color: rgb(186, 157, 90);
@@ -578,7 +574,6 @@ form .input-field input[type=password] {
 
 .App {
   background-color: rgb(0, 20, 36);
-  color: #fff;
   font-size: 1rem;
   text-align: center;
   display: flex;
@@ -620,17 +615,11 @@ body.protanopia {
 }
 body.deuteranopia {
   color: #fff !important;
-  filter: hue-rotate(30deg);
-}
-body.deuteranopia button {
-  background: rgb(168, 110, 167);
-}
-body.deuteranopia .login {
-  background: transparent;
+  filter: hue-rotate(180deg);
 }
 body.tritanopia {
   color: #fff !important;
-  filter: hue-rotate(90deg);
+  filter: hue-rotate(30deg);
 }
 body.tritanopia button {
   background: rgb(168, 110, 167);
