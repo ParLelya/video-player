@@ -13,11 +13,10 @@ html {
 }
 
 body {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   color: #fff;
   width: 100vw;
   min-height: 100vh;
+  overflow-x: hidden;
 
   .filter {
     width: 100%;
