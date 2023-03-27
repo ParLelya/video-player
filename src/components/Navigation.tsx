@@ -1,18 +1,12 @@
 import React from 'react'
 import SearchBar from './SearchBar';
 import { Link } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../hooks/hooks';
-import { setIsAuth } from '../slices/colorSlice';
+import { useAppSelector } from '../hooks/hooks';
 import { RootState } from '../store/store';
 
 const Navigation: React.FC = () => {
 
-	const dispatch = useAppDispatch()
-	const { isAuth } = useAppSelector((state: RootState) => state.color)
-
-	const login = () => {
-		dispatch(setIsAuth(!isAuth))
-	}
+	const { isAuth } = useAppSelector((state: RootState) => state.user)
 
 	return (
 		<header>
@@ -42,18 +36,18 @@ const Navigation: React.FC = () => {
 					</Link>
 
 				</nav>
-				
-					<SearchBar />
-					<button className='login hide-on-med-and-down' onClick={login}>
-						<span> <i className="material-icons" style={{ fontSize: '20px' }}>account_circle</i>
-							{
-								isAuth
-									? 'Выйти'
-									: 'Войти'
-							}
-						</span>
-					</button>
-				
+
+				<SearchBar />
+				<button className='login hide-on-med-and-down'>
+					<Link to='/myprofile'>
+						<i className="material-icons" style={{ fontSize: '20px' }}>account_circle</i>
+						{
+							isAuth
+								? 'Профиль'
+								: 'Войти'
+						}
+					</Link>
+				</button>
 			</div>
 		</header>
 	)

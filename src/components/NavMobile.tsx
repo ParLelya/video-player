@@ -1,17 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useAppDispatch, useAppSelector } from '../hooks/hooks'
-import { setIsAuth } from '../slices/colorSlice'
-import { RootState } from '../store/store'
 
 const NavMobile: React.FC = () => {
-
-	const dispatch = useAppDispatch()
-	const { isAuth } = useAppSelector((state: RootState) => state.color)
-
-	const login = () => {
-		dispatch(setIsAuth(!isAuth))
-	}
 
 	return (
 		<nav className="nav-mobile show-on-medium-and-down">
@@ -31,13 +21,9 @@ const NavMobile: React.FC = () => {
 				<i className="material-icons" style={{ fontSize: '2rem' }}>video_library</i><br />
 				Сериалы
 			</Link>
-			<Link to="/" onClick={login}>
+			<Link to="/myprofile">
 				<i className="material-icons" style={{ fontSize: '2rem' }}>account_circle</i><br />
-				{
-					isAuth
-						? 'Выйти'
-						: 'Войти'
-				}
+				Ещё
 			</Link>
 			<Link to="/accessibility">
 				<i className="material-icons" style={{ fontSize: '2rem' }}>settings_accessibility</i><br />

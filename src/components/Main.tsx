@@ -4,6 +4,7 @@ import VideoPlayer from '../pages/VideoPlayer';
 import Accessibility from '../pages/Accessibility';
 import Home from '../pages/Home';
 import NotFound from '../pages/NotFound';
+import User from './../pages/User';
 
 const Main = () => {
 	return (
@@ -12,6 +13,7 @@ const Main = () => {
 				<Route path='/' element={<Home/>} />
 				<Route path='/accessibility' element={<Accessibility/>} />
 				<Route path='/mediaplayer' element={<VideoPlayer />} />
+				<Route path='/myprofile' element={<User />} />
 				<Route path="/*" element={<NotFound />} />
 			</Routes>
 		</main>

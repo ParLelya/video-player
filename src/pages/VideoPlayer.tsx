@@ -7,14 +7,14 @@ import {
 	setSaturationValue,
 } from '../slices/colorSlice'
 import { RootState } from '../store/store'
-import PureJsModule from '../services/client'
+import Client from '../services/clientService'
 
 const VideoPlayer: React.FC = () => {
 
-	const media = useMemo(() => new (PureJsModule as any)(), [])
+	const media = useMemo(() => new (Client as any)(), [])
 
 	const dispatch = useAppDispatch()
-	const { brightnessValue, contrastValue, sharpnessValue, saturationValue } =
+	const { isAuth, brightnessValue, contrastValue, sharpnessValue, saturationValue } =
 		useAppSelector((state: RootState) => state.color)
 
 	const useStunRef = useRef<HTMLInputElement | null>(null)
@@ -39,10 +39,12 @@ const VideoPlayer: React.FC = () => {
 
 	const handleSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
 		event.preventDefault()
-		// localStorage.setItem('brightnessPreset', String(brightnessValue))
-		// localStorage.setItem('contrastPreset', String(contrastValue))
-		// localStorage.setItem('sharpnessPreset', String(sharpnessValue))
-		// localStorage.setItem('saturationPreset', String(saturationValue))
+		if (isAuth) {
+			localStorage.setItem('brightnessPreset', String(brightnessValue))
+			localStorage.setItem('contrastPreset', String(contrastValue))
+			localStorage.setItem('sharpnessPreset', String(sharpnessValue))
+			localStorage.setItem('saturationPreset', String(saturationValue))
+		}
 		media.test()
 	}
 
@@ -141,18 +143,18 @@ const VideoPlayer: React.FC = () => {
 						/>
 					</label>
 				</p>
-				{!window.navigator.userAgent.includes('Firefox' || 'Chrome') && (
-					<div className="use-stun">
-						<label>
-							<input
-								id="use-stun"
-								type="checkbox"
-								ref={useStunRef}
-							/>
-							STUN сервер
-						</label>
-					</div>
-				)
+				{
+					!window.navigator.userAgent.includes('Firefox' || 'Chrome') && (
+						<div className="use-stun">
+							<label>
+								<input
+									id="use-stun"
+									type="checkbox"
+									ref={useStunRef}
+								/>
+								STUN сервер
+							</label>
+						</div>)
 				}
 				<div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
 					<button id="test" type='submit' onClick={handleSubmit}>

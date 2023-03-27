@@ -1,9 +1,11 @@
 import { configureStore, Store, ThunkAction, Action  } from '@reduxjs/toolkit'
 import colorReducer from '../slices/colorSlice'
+import userReducer from '../slices/userSlice'
 
 export const store: Store = configureStore({
   reducer: {
     color: colorReducer,
+	user: userReducer
   },
 })
 

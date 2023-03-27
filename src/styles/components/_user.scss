@@ -1,0 +1,56 @@
+@import "../variables";
+
+.profile {
+  width: 80%;
+  height: 50vh;
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .my-profile {
+    width: 100%;
+
+    button {
+      font-size: 1rem;
+      background-color: $gold;
+      color: $primary;
+      border-radius: 8px;
+      padding: 1rem;
+
+      @media only screen and (max-width: 992px) {
+        margin: 0 auto;
+        width: 50%;
+      }
+    }
+  }
+
+  .my-profile-name {
+    width: 50%;
+    height: 15vh;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: $second;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+	@media only screen and (max-width: 992px) {
+        width: 100%;
+		margin: 1rem 0;
+      }
+
+    label {
+      font-size: 1.2rem;
+
+      span {
+        border-radius: 6px;
+        padding: 1rem;
+        background: $blue;
+        margin: 0 1rem;
+      }
+    }
+  }
+}

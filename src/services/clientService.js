@@ -1,6 +1,6 @@
 var pc = null;
 
-class PureJsModule {
+class Client {
 
   negotiate() {
     pc.addTransceiver("video", { direction: "recvonly" });
@@ -110,4 +110,4 @@ class PureJsModule {
   }
 };
 
-export default PureJsModule
+export default Client

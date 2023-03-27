@@ -12,60 +12,80 @@ form {
   justify-content: center;
   align-items: center;
 
-  @media only screen and (max-width: 992px) {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  legend {
-    font-size: 1.5rem;
-  }
-
-  p {
-    font-size: 1.2rem;
-    margin: 1rem 2rem;
-
-    span {
-      margin-left: 1rem;
-    }
-
-    input[type="range"] {
-      width: 50%;
-      margin: 1rem 1.5rem;
-
-      @media only screen and (max-width: 992px) {
-        width: 100%;
-        margin: 0.5rem;
-      }
-    }
-  }
-
-  select {
-    border: none;
-    color: $white;
-    background: $second;
-	border-radius: 6px;
-    margin: 1rem;
-	padding: 1rem;
-	font-size: 1rem;
-	
-	option {
-		font-size: inherit;
+	@media only screen and (max-width: 992px) {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: center;
 	}
-  }
 
-  button {
-    background-color: $gold;
-    color: $primary;
-    border-radius: 8px;
-    padding: 1rem;
-    font-size: 1.5rem;
+	legend {
+		font-size: 1.5rem;
+	}
 
-    @media only screen and (max-width: 992px) {
-      margin: 0 auto;
-      width: 90%;
-    }
-  }
+	p {
+		font-size: 1.2rem;
+		margin: 1rem 2rem;
+
+		span {
+		margin-left: 1rem;
+		}
+
+		input[type="range"] {
+		width: 50%;
+		margin: 1rem 1.5rem;
+
+		@media only screen and (max-width: 992px) {
+			width: 100%;
+			margin: 0.5rem;
+		}
+		}
+	}
+
+	select {
+		border: none;
+		color: $white;
+		background: $second;
+		border-radius: 6px;
+		margin: 1rem;
+		padding: 1rem;
+		font-size: 1rem;
+		
+		option {
+			font-size: inherit;
+		}
+	}
+
+	button {
+		background-color: $gold;
+		color: $primary;
+		border-radius: 8px;
+		padding: 1rem;
+		font-size: 1rem;
+
+		@media only screen and (max-width: 992px) {
+		margin: 0 auto;
+		width: 90%;
+		}
+	}
+
+	.input-field {
+		width: 100%;
+		margin: 1rem auto;
+		
+		input[type="text"],
+		input[type="password"] {
+			width: 100%;
+			margin: 1rem auto;
+			border: none;
+			padding: 1rem 1.5rem;
+			border-radius: 6px;
+			background: $lightblue;
+
+			@media only screen and (max-width: 992px) {
+				width: 100%;
+				margin: 0.5rem;
+			}
+		}
+	}
 }

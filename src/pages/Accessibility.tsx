@@ -1,20 +1,16 @@
 import React from 'react'
-import { useAppDispatch, useAppSelector } from '../hooks/hooks'
+import { useAppSelector } from '../hooks/hooks'
 import { RootState } from '../store/store'
-import { setGrayScaleValue } from '../slices/colorSlice'
 
 const Accessibility: React.FC = () => {
 
-	const dispatch = useAppDispatch()
-	const { grayScaleValue } = useAppSelector((state: RootState) => state.color)
+	const { isAuth } = useAppSelector((state: RootState) => state.user)
 
-	const switchGreyShades = () => {
-		dispatch(setGrayScaleValue(100))
-	}
-
-	const handleSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
+	const handleSubmit = (event: React.MouseEvent<HTMLButtonElement>): void => {
 		event.preventDefault()
-		localStorage.setItem('accessibilityPreset', String(grayScaleValue))
+		if (isAuth) {
+			// localStorage.setItem('accessibilityPreset', )
+		} 
 	}
 
 	return (
@@ -23,19 +19,19 @@ const Accessibility: React.FC = () => {
 			<div>
 				<p>
 					<label>
-						<input type="checkbox" disabled />
+						<input type="checkbox" />
 						<span>Режим для слабовидящих</span>
 					</label>
 				</p>
 				<p>
 					<label>
-						<input type="checkbox" disabled />
+						<input type="checkbox" />
 						<span>Режим для слабослышащих</span>
 					</label>
 				</p>
 				<p>
 					<label>
-						<input type="checkbox" onChange={switchGreyShades} />
+						<input type="checkbox" />
 						<span>Черно-белый режим</span>
 					</label>
 				</p>
