@@ -3,15 +3,24 @@ import { Link } from 'react-router-dom'
 import { useAppSelector } from '../hooks/hooks'
 import { RootState } from '../store/store'
 
+export const DEFAULT_THEME = 'default'
+
+export function applyTheme(theme: string) {
+	document.body.classList.remove("default", 'fz-increase', 'grayscale', 'protanopia', 'deuteranopia', 'tritanopia')
+	document.body.classList.add(`${theme}`)
+}
+
 const Home: React.FC = () => {
 
 	const { isAuth } = useAppSelector((state: RootState) => state.user)
-	
+
 	useEffect(() => {
 		if (isAuth) {
-			localStorage.getItem('accessibilityPreset')
-		} 
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+
+			let activeTheme = localStorage.getItem('accessibilityPreset') || DEFAULT_THEME
+			applyTheme(activeTheme)
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
 	return (
