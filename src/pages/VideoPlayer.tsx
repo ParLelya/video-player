@@ -98,10 +98,11 @@ const VideoPlayer: React.FC = () => {
 					<label>
 						<span>Настройка яркости</span>
 						<input
-							type="range"
+							type="number"
 							id="brightness"
-							min="0"
-							max="100"
+							min="1"
+							max="3"
+							step='0.05'
 							onChange={setBrightness}
 						/>
 					</label>
@@ -110,10 +111,11 @@ const VideoPlayer: React.FC = () => {
 					<label>
 						<span>Настройка контрастности</span>
 						<input
-							type="range"
+							type="number"
 							id="contrast"
-							min="0"
-							max="200"
+							min="1"
+							max="3"
+							step='0.05'
 							onChange={setContrast}
 						/>
 					</label>
@@ -122,10 +124,11 @@ const VideoPlayer: React.FC = () => {
 					<label>
 						<span>Настройка насыщенности</span>
 						<input
-							type="range"
+							type="number"
 							id="saturation"
-							min="0"
-							max="200"
+							min="1"
+							max="3"
+							step='0.05'
 							onChange={setSaturation}
 						/>
 					</label>
@@ -134,10 +137,11 @@ const VideoPlayer: React.FC = () => {
 					<label>
 						<span>Настройка резкости</span>
 						<input
-							type="range"
+							type="number"
 							id="sharpness"
-							min="0"
-							max="100"
+							min="1"
+							max="3"
+							step='0.05'
 							onChange={setSharpness}
 							disabled
 						/>

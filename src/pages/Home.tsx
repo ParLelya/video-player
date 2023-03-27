@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useAppSelector } from '../hooks/hooks'
+import { RootState } from '../store/store'
 
-const Home = () => {
+const Home: React.FC = () => {
+
+	const { isAuth } = useAppSelector((state: RootState) => state.user)
+	
+	useEffect(() => {
+		if (isAuth) {
+			localStorage.getItem('accessibilityPreset')
+		} 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [])
 
 	return (
 		<div style={{ maxWidth: '90vw' }}>

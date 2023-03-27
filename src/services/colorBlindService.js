@@ -5,7 +5,7 @@ import colorblindPlugin from "postcss-colorblind";
 var css = readFileSync("input.css", "utf8");
 
 postcss()
-  .use(colorblindPlugin())
+  .use(colorblindPlugin({ method: "achromatopsia" }))
   .process(css)
   .then(function (result) {
     writeFileSync("output.css", result.css);

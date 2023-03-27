@@ -19,19 +19,19 @@ const Accessibility: React.FC = () => {
 			<div>
 				<p>
 					<label>
-						<input type="checkbox" />
+						<input type="radio" name='access'/>
 						<span>Режим для слабовидящих</span>
 					</label>
 				</p>
 				<p>
 					<label>
-						<input type="checkbox" />
+						<input type="radio" name='access'/>
 						<span>Режим для слабослышащих</span>
 					</label>
 				</p>
 				<p>
 					<label>
-						<input type="checkbox" />
+						<input type="radio" name='access'/>
 						<span>Черно-белый режим</span>
 					</label>
 				</p>
@@ -40,7 +40,7 @@ const Accessibility: React.FC = () => {
 				<label>
 					<span>Режим для людей с дальтонизмом</span>
 				</label>
-				<select>
+				<select name='access'>
 					<option>Нет</option>
 					<option>Протанопия</option> {/*нет красного*/}
 					<option>Дейтеранопия</option> {/*нет зеленого*/}
