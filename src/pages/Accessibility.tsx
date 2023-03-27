@@ -17,24 +17,36 @@ const Accessibility: React.FC = () => {
 	const [gray, setGray] = useState(false)
 	const handleGrayChange = () => {
 		setGray(!gray)
+		setNoRed(false)
+		setNoGreen(false)
+		setNoBlue(false)
 	}
 
 	const protanopiaRef = useRef<HTMLOptionElement | null>(null)
 	const [noRed, setNoRed] = useState(false)
 	const handleRedRemove = () => {
 		setNoRed(!noRed)
+		setNoGreen(false)
+		setNoBlue(false)
+		setGray(false)
 	}
 
 	const deuteranopiaRef = useRef<HTMLOptionElement | null>(null)
 	const [noGreen, setNoGreen] = useState(false)
 	const handleGreenRemove = () => {
 		setNoGreen(!noGreen)
+		setNoRed(false)
+		setNoBlue(false)
+		setGray(false)
 	}
 
 	const tritanopiaRef = useRef<HTMLOptionElement | null>(null)
 	const [noBlue, setNoBlue] = useState(false)
 	const handleBlueRemove = () => {
 		setNoBlue(!noBlue)
+		setNoRed(false)
+		setNoGreen(false)
+		setGray(false)
 	}
 
 	const classesList = ['fz-increase', 'grayscale', 'protanopia', 'deuteranopia', 'tritanopia']

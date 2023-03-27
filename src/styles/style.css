@@ -219,7 +219,7 @@ main .posters {
   flex-direction: column;
   flex-wrap: wrap;
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1100px) {
   main .posters {
     width: 100%;
   }
@@ -246,7 +246,7 @@ main .posters-images a {
   width: 22vw;
   height: 40vh;
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 882px) {
   main .posters-images a {
     height: 18vh;
   }
@@ -455,6 +455,7 @@ form {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
   }
 }
 form legend {
@@ -585,4 +586,55 @@ form .input-field input[type=password] {
   flex-wrap: wrap;
   width: 100%;
   overflow: hidden;
+}
+
+body.fz-increase header {
+  height: 15vh;
+}
+body.fz-increase .search {
+  width: 60%;
+}
+body.fz-increase .search input {
+  width: 100%;
+}
+body.fz-increase legend, body.fz-increase p, body.fz-increase span, body.fz-increase label, body.fz-increase i, body.fz-increase li {
+  font-size: 2rem !important;
+}
+body.fz-increase button {
+  font-size: 1.5rem !important;
+  width: 100%;
+  height: 10vh !important;
+}
+body.fz-increase option, body.fz-increase select, body.fz-increase nav a, body.fz-increase span.contacts, body.fz-increase span.copyright, body.fz-increase .help ul li a, body.fz-increase .links ul li a {
+  font-size: 1.5rem !important;
+}
+body.fz-increase .login {
+  width: 40% !important;
+}
+body.grayscale {
+  filter: grayscale(100) contrast(105%) !important;
+}
+body.protanopia {
+  color: #fff !important;
+  filter: hue-rotate(205deg);
+}
+body.deuteranopia {
+  color: #fff !important;
+  filter: hue-rotate(30deg);
+}
+body.deuteranopia button {
+  background: rgb(168, 110, 167);
+}
+body.deuteranopia .login {
+  background: transparent;
+}
+body.tritanopia {
+  color: #fff !important;
+  filter: hue-rotate(90deg);
+}
+body.tritanopia button {
+  background: rgb(168, 110, 167);
+}
+body.tritanopia .login {
+  background: transparent;
 }/*# sourceMappingURL=style.css.map */
