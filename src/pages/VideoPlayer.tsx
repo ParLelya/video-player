@@ -88,7 +88,7 @@ const VideoPlayer: React.FC = () => {
 				>Тест</button> */}
 			</div>
 			<div id="media">
-				{/* <audio id="audio" autoPlay={true}></audio> */}
+				<audio id="audio" autoPlay={true}></audio>
 				<video id="video" autoPlay={true} playsInline={true} controls muted loop>
 				</video>
 			</div>
@@ -147,19 +147,16 @@ const VideoPlayer: React.FC = () => {
 						/>
 					</label>
 				</p>
-				{
-					!window.navigator.userAgent.includes('Firefox' || 'Chrome') && (
-						<div className="use-stun">
-							<label>
-								<input
-									id="use-stun"
-									type="checkbox"
-									ref={useStunRef}
-								/>
-								STUN сервер
-							</label>
-						</div>)
-				}
+				<div className="use-stun">
+					<label>
+						<input
+							id="use-stun"
+							type="checkbox"
+							ref={useStunRef}
+						/>
+						STUN сервер
+					</label>
+				</div>
 				<div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
 					<button id="test" type='submit' onClick={handleSubmit}>
 						Применить настройки
