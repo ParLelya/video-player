@@ -16,7 +16,6 @@ const Home: React.FC = () => {
 
 	useEffect(() => {
 		if (isAuth) {
-
 			let activeTheme = localStorage.getItem('accessibilityPreset') || DEFAULT_THEME
 			applyTheme(activeTheme)
 		}
