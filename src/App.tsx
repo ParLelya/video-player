@@ -8,6 +8,7 @@ import NavMobile from './components/NavMobile';
 function App() {
 	return (
 		<div className="App">
+			<img src='./filters.svg' alt='' className='filter'/>
 			<Navigation />
 			<Main />
 			<Footer />

@@ -9,15 +9,15 @@ const NavMobile: React.FC = () => {
 				<i className="material-icons" style={{ fontSize: '2rem' }}>home</i><br />
 				Главная
 			</Link>
-			<Link to="/">
+			<Link to="/mediaplayer">
 				<i className="material-icons" style={{ fontSize: '2rem' }}>live_tv</i><br />
 				ТВ
 			</Link>
-			<Link to="/">
+			<Link to="/mediaplayer">
 				<i className="material-icons" style={{ fontSize: '2rem' }}>local_movies</i><br />
 				Фильмы
 			</Link>
-			<Link to="/">
+			<Link to="/mediaplayer">
 				<i className="material-icons" style={{ fontSize: '2rem' }}>video_library</i><br />
 				Сериалы
 			</Link>

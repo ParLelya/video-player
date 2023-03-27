@@ -16,6 +16,8 @@
 body {
 	&.fz-increase {
 
+		filter: contrast(110%);
+
 		header {
 			height: 15vh;
 		}
@@ -53,25 +55,28 @@ body {
 
 	//no red
 	&.protanopia { 
-		color: $white !important;
-		filter: hue-rotate(205deg);
+		filter: contrast(110%) !important;
+		.filter {
+			display: block;
+			background: rgba(0, 128, 255, .1);
+		}
 	}
 
 	//no green
 	&.deuteranopia { 
-		color: $white !important;
-		filter: hue-rotate(180deg);
+		filter: contrast(110%) !important;
+		.filter {
+			display: block;
+			background: rgba(255, 0, 128, .1);
+		}
 	}
 
 	//no blue
 	&.tritanopia { 
-		button {
-			background: $pink;
+		filter: contrast(110%) !important;
+		.filter {
+			display: block;
+			background: rgba(255, 0, 0,.1);
 		}
-		.login {
-			background: transparent;
-		}
-		color: $white !important;
-		filter: hue-rotate(30deg);
 	}
 }

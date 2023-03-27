@@ -19,6 +19,16 @@ body {
   width: 100vw;
   min-height: 100vh;
 }
+body .filter {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 999999;
+  pointer-events: none;
+}
 
 a,
 span,
@@ -174,7 +184,7 @@ nav.nav-mobile a {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  padding: 23px 10px;
+  padding: 23px 8px;
   border-bottom: 2px solid rgba(18, 40, 64, 0.85);
 }
 nav.nav-mobile a:hover, nav.nav-mobile a:active {
@@ -583,6 +593,9 @@ form .input-field input[type=password] {
   overflow: hidden;
 }
 
+body.fz-increase {
+  filter: contrast(110%);
+}
 body.fz-increase header {
   height: 15vh;
 }
@@ -610,20 +623,23 @@ body.grayscale {
   filter: grayscale(100) contrast(105%) !important;
 }
 body.protanopia {
-  color: #fff !important;
-  filter: hue-rotate(205deg);
+  filter: contrast(110%) !important;
+}
+body.protanopia .filter {
+  display: block;
+  background: rgba(0, 128, 255, 0.1);
 }
 body.deuteranopia {
-  color: #fff !important;
-  filter: hue-rotate(180deg);
+  filter: contrast(110%) !important;
+}
+body.deuteranopia .filter {
+  display: block;
+  background: rgba(255, 0, 128, 0.1);
 }
 body.tritanopia {
-  color: #fff !important;
-  filter: hue-rotate(30deg);
+  filter: contrast(110%) !important;
 }
-body.tritanopia button {
-  background: rgb(168, 110, 167);
-}
-body.tritanopia .login {
-  background: transparent;
+body.tritanopia .filter {
+  display: block;
+  background: rgba(255, 0, 0, 0.1);
 }/*# sourceMappingURL=style.css.map */

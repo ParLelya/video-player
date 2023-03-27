@@ -10,6 +10,7 @@ const Navigation: React.FC = () => {
 
 	return (
 		<header>
+
 			<div className='header'>
 				<Link to="/">
 					<img src='./logo.svg' className='my-logo' alt='logo' />
@@ -19,15 +20,15 @@ const Navigation: React.FC = () => {
 						Главная
 					</Link>
 
-					<Link to="/">
+					<Link to="/mediaplayer">
 						Телеканалы
 					</Link>
 
-					<Link to="/">
+					<Link to="/mediaplayer">
 						Фильмы
 					</Link>
 
-					<Link to="/">
+					<Link to="/mediaplayer">
 						Сериалы
 					</Link>
 

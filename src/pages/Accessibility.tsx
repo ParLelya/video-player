@@ -10,50 +10,65 @@ const Accessibility: React.FC = () => {
 	const fontSizeIncreaseRef = useRef<HTMLInputElement | null>(null)
 	const [fzInc, setFzInc] = useState(false)
 	const handleFzChange = () => {
-		setFzInc(!fzInc)
+		setFzInc(true)
 		setGray(false)
 		setNoRed(false)
 		setNoGreen(false)
 		setNoBlue(false)
+		setNone(false)
 	}
 
 	const grayScaleRef = useRef<HTMLInputElement | null>(null)
 	const [gray, setGray] = useState(false)
 	const handleGrayChange = () => {
-		setGray(!gray)
+		setGray(true)
 		setNoRed(false)
 		setNoGreen(false)
 		setNoBlue(false)
+		setNone(false)
 	}
 
 	const protanopiaRef = useRef<HTMLOptionElement | null>(null)
 	const [noRed, setNoRed] = useState(false)
 	const handleRedRemove = () => {
-		setNoRed(!noRed)
+		setNoRed(true)
 		setNoGreen(false)
 		setNoBlue(false)
 		setGray(false)
+		setNone(false)
 	}
 
 	const deuteranopiaRef = useRef<HTMLOptionElement | null>(null)
 	const [noGreen, setNoGreen] = useState(false)
 	const handleGreenRemove = () => {
-		setNoGreen(!noGreen)
+		setNoGreen(true)
 		setNoRed(false)
 		setNoBlue(false)
 		setGray(false)
+		setNone(false)
 	}
 
 	const tritanopiaRef = useRef<HTMLOptionElement | null>(null)
 	const [noBlue, setNoBlue] = useState(false)
 	const handleBlueRemove = () => {
-		setNoBlue(!noBlue)
+		setNoBlue(true)
+		setNoRed(false)
+		setNoGreen(false)
+		setGray(false)
+		setNone(false)
+	}
+
+	const noneRef = useRef<HTMLOptionElement | null>(null)
+	const [none, setNone] = useState(false)
+	const handleFiltersRemove = () => {
+		setNone(true)
+		setNoBlue(false)
 		setNoRed(false)
 		setNoGreen(false)
 		setGray(false)
 	}
 
-	const classesList = ['fz-increase', 'grayscale', 'protanopia', 'deuteranopia', 'tritanopia']
+	const classesList = ['fz-increase', 'grayscale', 'protanopia', 'deuteranopia', 'tritanopia', 'default']
 
 	const handleSubmit = (event: React.MouseEvent<HTMLButtonElement>): void => {
 		event.preventDefault()
@@ -72,6 +87,9 @@ const Accessibility: React.FC = () => {
 		}
 		if (tritanopiaRef.current?.classList.contains('active')) {
 			currentTheme = classesList[4]
+		}
+		if (noneRef.current?.classList.contains('active')) {
+			currentTheme = classesList[5]
 		}
 		applyTheme(currentTheme)
 		if (isAuth) {
@@ -128,6 +146,9 @@ const Accessibility: React.FC = () => {
 				<select name='access'>
 					<option
 						id='default'
+						ref={noneRef}
+						className={none ? 'active' : ''}
+						onClick={handleFiltersRemove}
 					>Нет</option>
 					<option
 						id='protanopia'
