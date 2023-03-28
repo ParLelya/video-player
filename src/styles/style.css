@@ -395,7 +395,7 @@ main .video-player form .check input[type=checkbox] {
   padding: 0.5rem;
 }
 main .video-player form button {
-  width: 100%;
+  width: 70%;
 }
 
 footer {
@@ -563,12 +563,12 @@ form button {
   margin: 0.5rem auto;
   padding: 1rem;
   font-size: 1rem;
-  width: 50%;
+  width: 40%;
 }
 @media only screen and (max-width: 992px) {
   form button {
     margin: 0.5rem auto;
-    width: 90%;
+    width: 60%;
   }
 }
 form .input-field {
