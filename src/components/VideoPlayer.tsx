@@ -23,13 +23,14 @@ const VideoPlayer: React.FC = () => {
 
 	useEffect(() => {
 		if (isAuth) {
-			setBrightnessValue(Number(localStorage.getItem('brightnessPreset')))
-			setContrastValue(Number(localStorage.getItem('contrastPreset')))
-			setSaturationValue(Number(localStorage.getItem('saturationPreset')))
-			// setsharpnessValue(Number(localStorage.getItem('sharpnessPreset')))
-			setSubtitles(!!localStorage.getItem('subtitles'))
-			setNoEpilepsy(!!localStorage.getItem('noEpilepsy'))
+			dispatch(setBrightnessValue(Number(localStorage.getItem('brightnessPreset'))))
+			dispatch(setContrastValue(Number(localStorage.getItem('contrastPreset'))))
+			dispatch(setSaturationValue(Number(localStorage.getItem('saturationPreset'))))
+			// dispatchsetsharpnessValue(Number(localStorage.getItem('sharpnessPreset'))))
+			dispatch(setSubtitles(!!localStorage.getItem('subtitles')))
+			dispatch(setNoEpilepsy(!!localStorage.getItem('noEpilepsy')))
 		}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isAuth])
 
 	const useStunRef = useRef<HTMLInputElement | null>(null)
