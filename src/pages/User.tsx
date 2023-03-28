@@ -54,7 +54,13 @@ const User: React.FC = () => {
 									Имя пользователя:
 									<span>{authData.login}</span>
 								</label>
+								<div className='presets'>
+									{localStorage.getItem('myPreset1') && <button className='preset-btn'>Включить пресет №1</button>}
+									{localStorage.getItem('myPreset2') && <button className='preset-btn'>Включить пресет №2</button>}
+									{localStorage.getItem('myPreset3') && <button className='preset-btn'>Включить пресет №3</button>}
+								</div>
 							</div>
+
 							<button onClick={logout}>Выйти</button>
 						</div>
 					) : (

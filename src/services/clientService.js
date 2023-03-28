@@ -29,7 +29,7 @@ export default class Client {
       .then(function () {
         var offer = pc.localDescription;
 
-		return fetch("https://hack-solution.live/offer", {
+		return fetch("https://hack-solution.tech/offer", {
 					body: JSON.stringify({
 					  sdp: offer.sdp,
 					  type: offer.type,
@@ -41,7 +41,7 @@ export default class Client {
 				  });
 
 		// if (document.getElementById('1')) {
-		// 	return fetch("https://hack-solution.live/offer", {
+		// 	return fetch("https://hack-solution.tech/offer", {
 		// 		body: JSON.stringify({
 		// 		  sdp: offer.sdp,
 		// 		  type: offer.type,
@@ -56,7 +56,7 @@ export default class Client {
 		// }
 
 		// if (document.getElementById('1') && document.getElementById('subtitles').hasAttribute('checked')) {
-		// 	return fetch("https://hack-solution.live/offer", {
+		// 	return fetch("https://hack-solution.tech/offer", {
 		// 		body: JSON.stringify({
 		// 		  sdp: offer.sdp,
 		// 		  type: offer.type,
@@ -71,7 +71,7 @@ export default class Client {
 		// }
 
 		// if (document.getElementById('2')) {
-		// 	return fetch("https://hack-solution.live/offer", {
+		// 	return fetch("https://hack-solution.tech/offer", {
 		// 		body: JSON.stringify({
 		// 		  sdp: offer.sdp,
 		// 		  type: offer.type,
@@ -86,7 +86,7 @@ export default class Client {
 		// }
 		
 		// if (document.getElementById('2') && document.getElementById('subtitles').hasAttribute('checked')) {
-		// 	return fetch("https://hack-solution.live/offer", {
+		// 	return fetch("https://hack-solution.tech/offer", {
 		// 		body: JSON.stringify({
 		// 		  sdp: offer.sdp,
 		// 		  type: offer.type,
@@ -123,7 +123,7 @@ export default class Client {
       ? document.getElementById("saturation").value
       : 0;
 
-    fetch("https://hack-solution.live/settings", {
+    fetch("https://hack-solution.tech/settings", {
       body: JSON.stringify({
         brightness: parseInt(brightness),
         contrast: parseInt(contrast),

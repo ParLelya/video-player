@@ -27,23 +27,30 @@
   }
 
   .my-profile-name {
-    width: 70%;
+    width: 80%;
     height: 15vh;
     margin: 2rem auto;
     padding: 1rem;
     background-color: $second;
     border-radius: 8px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 
-	@media only screen and (max-width: 992px) {
-        width: 100%;
-		margin: 1rem 0;
-      }
+    @media only screen and (max-width: 992px) {
+      width: 100%;
+      margin: 1rem 0;
+    }
 
     label {
       font-size: 1.2rem;
+
+      @media only screen and (max-width: 992px) {
+        width: 100%;
+        margin: 1rem auto;
+      }
 
       span {
         border-radius: 6px;
@@ -51,6 +58,27 @@
         background: $blue;
         margin: 0 1rem;
       }
+    }
+
+    .presets {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 50%;
+      margin: 1rem 0;
+
+      @media only screen and (max-width: 992px) {
+        width: 100%;
+        margin: 1rem auto;
+      }
+    }
+
+    .preset-btn {
+      width: 80%;
+      background-color: transparent;
+      color: $pink;
+      font-weight: 500;
     }
   }
 }

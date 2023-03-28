@@ -21,6 +21,13 @@ const VideoPlayer: React.FC = () => {
 		useAppSelector((state: RootState) => state.color)
 	const { isAuth } = useAppSelector((state: RootState) => state.user)
 
+	const useStunRef = useRef<HTMLInputElement | null>(null)
+	const subsRef = useRef<HTMLInputElement | null>(null)
+	const noEpilepsyRef = useRef<HTMLInputElement | null>(null)
+	const stopRef = useRef<HTMLButtonElement | null>(null)
+	const startRef = useRef<HTMLButtonElement | null>(null)
+	const formRef = useRef<HTMLFormElement | null>(null)
+
 	useEffect(() => {
 		if (isAuth) {
 			dispatch(setBrightnessValue(Number(localStorage.getItem('brightnessPreset'))))
@@ -30,15 +37,16 @@ const VideoPlayer: React.FC = () => {
 			dispatch(setSubtitles(!!localStorage.getItem('subtitles')))
 			dispatch(setNoEpilepsy(!!localStorage.getItem('noEpilepsy')))
 		}
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isAuth])
 
-	const useStunRef = useRef<HTMLInputElement | null>(null)
-	const subsRef = useRef<HTMLInputElement | null>(null)
-	const noEpilepsyRef = useRef<HTMLInputElement | null>(null)
-	const stopRef = useRef<HTMLButtonElement | null>(null)
-	const startRef = useRef<HTMLButtonElement | null>(null)
-	const formRef = useRef<HTMLFormElement | null>(null)
+	const openSettings = () => {
+		if (formRef.current?.style.display === 'none') {
+			formRef.current!.style.display = 'flex'
+		} else {
+			formRef.current!.style.display = 'none'
+		}
+	}
 
 	const setBrightness = (event: React.ChangeEvent<HTMLInputElement>): void => {
 		dispatch(setBrightnessValue(Number(event.target.value)))
@@ -56,25 +64,41 @@ const VideoPlayer: React.FC = () => {
 		dispatch(setSaturationValue(Number(event.target.value)))
 	}
 
+
+
+	const saveSettings = () => {
+		localStorage.setItem('brightnessPreset', String(brightnessValue))
+		localStorage.setItem('contrastPreset', String(contrastValue))
+		localStorage.setItem('saturationPreset', String(saturationValue))
+		// localStorage.setItem('sharpnessPreset', String(sharpnessValue))
+		localStorage.setItem('subtitles', String(subtitles))
+		localStorage.setItem('noEpilepsy', String(noEpilepsy))
+
+		const presetArray = [brightnessValue, contrastValue, saturationValue, subtitles, noEpilepsy]
+		return presetArray
+	}
+
 	const handleSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
 		event.preventDefault()
 		if (isAuth) {
-			localStorage.setItem('brightnessPreset', String(brightnessValue))
-			localStorage.setItem('contrastPreset', String(contrastValue))
-			localStorage.setItem('saturationPreset', String(saturationValue))
-			// localStorage.setItem('sharpnessPreset', String(sharpnessValue))
-			localStorage.setItem('subtitles', String(subtitles))
-			localStorage.setItem('noEpilepsy', String(noEpilepsy))
+			saveSettings()
 		}
 		media.test()
 	}
 
-	const openSettings = () => {
-		if (formRef.current?.style.display === 'none') {
-			formRef.current!.style.display = 'flex'
-		} else {
-			formRef.current!.style.display = 'none'
-		}
+	const savePreset1 = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
+		event.preventDefault()
+		localStorage.setItem('myPreset1', saveSettings().join(','))
+	}
+
+	const savePreset2 = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
+		event.preventDefault()
+		localStorage.setItem('myPreset2', saveSettings().join(','))
+	}
+
+	const savePreset3 = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
+		event.preventDefault()
+		localStorage.setItem('myPreset3', saveSettings().join(','))
 	}
 
 	return (
@@ -123,7 +147,7 @@ const VideoPlayer: React.FC = () => {
 						<input
 							type="range"
 							id="contrast"
-							min="0"
+							min="1"
 							max="3"
 							step='0.05'
 							onChange={setContrast}
@@ -150,7 +174,7 @@ const VideoPlayer: React.FC = () => {
 							type="range"
 							id="sharpness"
 							min="0"
-							max="1"
+							max="3"
 							step='0.05'
 							onChange={setSharpness}
 							disabled
@@ -197,6 +221,38 @@ const VideoPlayer: React.FC = () => {
 					</button>
 				</div>
 				<AccessibilityForm />
+				{
+					isAuth
+						? (
+							<div
+								className='presets'
+								style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100%' }}
+							>
+								<button
+									className='preset-btn'
+									style={{ color: 'rgb(168, 110, 167)', width: '80%', background: 'transparent', fontWeight: '500' }}
+									onClick={savePreset1}
+								>Сохранить пресет №1</button>
+								{
+									localStorage.getItem('myPreset1') &&
+									<button
+										className='preset-btn'
+										style={{ color: 'rgb(168, 110, 167)', width: '80%', background: 'transparent', fontWeight: '500' }}
+										onClick={savePreset2}
+									>Сохранить пресет №2</button>
+								}
+								{
+									localStorage.getItem('myPreset2') &&
+									<button
+										className='preset-btn'
+										style={{ color: 'rgb(168, 110, 167)', width: '80%', background: 'transparent', fontWeight: '500' }}
+										onClick={savePreset3}
+									>Сохранить пресет №3</button>
+								}
+							</div>
+						)
+						: <h4 style={{ textAlign: 'center' }}>Войдите в профиль, чтобы сохранить пресеты настроек</h4>
+				}
 			</form>
 		</div>
 	)

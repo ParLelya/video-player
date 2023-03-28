@@ -19,8 +19,7 @@ const Home: React.FC = () => {
 			let activeTheme = localStorage.getItem('accessibilityPreset') || DEFAULT_THEME
 			applyTheme(activeTheme)
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [])
+	}, [isAuth])
 
 	return (
 		<div style={{ maxWidth: '90vw' }}>
