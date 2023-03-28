@@ -53,15 +53,6 @@ const AccessibilityForm: React.FC = () => {
 		setGray(false)
 	}
 
-	const handleFiltersRemove = (event: React.MouseEvent<HTMLButtonElement>): void => {
-		event.preventDefault()
-		setNoBlue(false)
-		setNoRed(false)
-		setNoGreen(false)
-		setGray(false)
-		applyTheme(DEFAULT_THEME)
-	}
-
 	const classesList = ['fz-increase', 'grayscale', 'protanopia', 'deuteranopia', 'tritanopia']
 
 	const handleSubmit = (event: React.MouseEvent<HTMLButtonElement>): void => {
@@ -85,6 +76,18 @@ const AccessibilityForm: React.FC = () => {
 		applyTheme(currentTheme)
 		if (isAuth) {
 			localStorage.setItem('accessibilityPreset', currentTheme)
+		}
+	}
+
+	const handleFiltersRemove = (event: React.MouseEvent<HTMLButtonElement>): void => {
+		event.preventDefault()
+		setNoBlue(false)
+		setNoRed(false)
+		setNoGreen(false)
+		setGray(false)
+		applyTheme(DEFAULT_THEME)
+		if (isAuth) {
+			localStorage.setItem('accessibilityPreset', DEFAULT_THEME)
 		}
 	}
 
