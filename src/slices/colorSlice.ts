@@ -6,7 +6,8 @@ export interface ColorState {
   contrastValue: number
   sharpnessValue: number
   saturationValue: number
-  grayScale: number
+  subtitles: boolean
+  noEpilepsy: boolean
 }
 
 const initialState: ColorState = {
@@ -14,7 +15,8 @@ const initialState: ColorState = {
 	contrastValue: 0,
 	sharpnessValue: 0,
 	saturationValue: 0,
-	grayScale: 0,
+	subtitles: false,
+	noEpilepsy: false
 }
 
 export const colorSlice = createSlice({
@@ -33,12 +35,15 @@ export const colorSlice = createSlice({
 	setSaturationValue(state, action: PayloadAction<number>) {
 		state.saturationValue = action.payload
     },
-	setGrayScaleValue(state, action: PayloadAction<number>) {
-		state.grayScale = action.payload
+	setSubtitles(state, action: PayloadAction<boolean>) {
+		state.subtitles = action.payload
+    },
+	setNoEpilepsy(state, action: PayloadAction<boolean>) {
+		state.noEpilepsy = action.payload
     },
   },
 })
 
-export const { setBrightnessValue, setContrastValue, setSharpnessValue, setSaturationValue, setGrayScaleValue } = colorSlice.actions
+export const { setBrightnessValue, setContrastValue, setSharpnessValue, setSaturationValue, setSubtitles, setNoEpilepsy} = colorSlice.actions
 
 export default colorSlice.reducer

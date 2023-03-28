@@ -1,10 +1,12 @@
-import React, { useRef, useMemo } from 'react'
+import React, { useRef, useMemo, useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 import {
 	setBrightnessValue,
 	setContrastValue,
 	setSharpnessValue,
 	setSaturationValue,
+	setSubtitles,
+	setNoEpilepsy,
 } from '../slices/colorSlice'
 import { RootState } from '../store/store'
 import Client from '../services/clientService'
@@ -15,11 +17,24 @@ const VideoPlayer: React.FC = () => {
 	const media = useMemo(() => new (Client as any)(), [])
 
 	const dispatch = useAppDispatch()
-	const { brightnessValue, contrastValue, saturationValue } =
+	const { brightnessValue, contrastValue, saturationValue, subtitles, noEpilepsy } =
 		useAppSelector((state: RootState) => state.color)
 	const { isAuth } = useAppSelector((state: RootState) => state.user)
 
+	useEffect(() => {
+		if (isAuth) {
+			setBrightnessValue(Number(localStorage.getItem('brightnessPreset')))
+			setContrastValue(Number(localStorage.getItem('contrastPreset')))
+			setSaturationValue(Number(localStorage.getItem('saturationPreset')))
+			// setsharpnessValue(Number(localStorage.getItem('sharpnessPreset')))
+			setSubtitles(!!localStorage.getItem('subtitles'))
+			setNoEpilepsy(!!localStorage.getItem('noEpilepsy'))
+		}
+	}, [isAuth])
+
 	const useStunRef = useRef<HTMLInputElement | null>(null)
+	const subsRef = useRef<HTMLInputElement | null>(null)
+	const noEpilepsyRef = useRef<HTMLInputElement | null>(null)
 	const stopRef = useRef<HTMLButtonElement | null>(null)
 	const startRef = useRef<HTMLButtonElement | null>(null)
 	const formRef = useRef<HTMLFormElement | null>(null)
@@ -47,6 +62,8 @@ const VideoPlayer: React.FC = () => {
 			localStorage.setItem('contrastPreset', String(contrastValue))
 			localStorage.setItem('saturationPreset', String(saturationValue))
 			// localStorage.setItem('sharpnessPreset', String(sharpnessValue))
+			localStorage.setItem('subtitles', String(subtitles))
+			localStorage.setItem('noEpilepsy', String(noEpilepsy))
 		}
 		media.test()
 	}
@@ -145,6 +162,8 @@ const VideoPlayer: React.FC = () => {
 							type="checkbox"
 							name='access'
 							id='subtitles'
+							ref={subsRef}
+							onChange={() => setSubtitles(!subtitles)}
 						/>
 						<span>Включить субтитры</span>
 					</label>
@@ -155,6 +174,8 @@ const VideoPlayer: React.FC = () => {
 							type="checkbox"
 							name='access'
 							id='epilepsy'
+							ref={noEpilepsyRef}
+							onChange={() => setNoEpilepsy(!noEpilepsy)}
 						/>
 						<span>Режим для людей с эпилепсией</span>
 					</label>
