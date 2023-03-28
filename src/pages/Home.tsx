@@ -30,38 +30,38 @@ const Home: React.FC = () => {
 					<a href='!'>Смотреть все <i className="large material-icons" style={{ fontSize: '1rem' }}>chevron_right</i></a>
 				</div>
 				<div className='posters-images'>
-					<Link to="/mediaplayer">
+					<Link to="/mediaplayer/1">
 						<img
 							src='./card1.svg'
 							alt='new films and series'
 						/>
 					</Link>
-					<Link to="/mediaplayer">
+					<Link to="/mediaplayer/2">
 						<img
 							src='./card2.svg'
 							alt='new films and series'
 						/>
 					</Link>
-					<Link to="/mediaplayer">
+					<Link to="/mediaplayer/1">
 						<img
 							src='./card3.svg'
 							alt='new films and series'
 						/>
 					</Link>
 
-					<Link to="/mediaplayer">
+					<Link to="/mediaplayer/2">
 						<img
 							src='./card4.svg'
 							alt='new films and series'
 						/>
 					</Link>
-					<Link to="/mediaplayer" className='hide-on-med-and-down'>
+					<Link to="/mediaplayer/1" className='hide-on-med-and-down'>
 						<img
 							src='./card5.svg'
 							alt='new films and series'
 						/>
 					</Link>
-					<Link to="/mediaplayer" className='hide-on-med-and-down'>
+					<Link to="/mediaplayer/2" className='hide-on-med-and-down'>
 						<img
 							src='./card6.svg'
 							alt='new films and series'

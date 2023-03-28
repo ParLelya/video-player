@@ -1,10 +1,10 @@
 var pc = null;
 
-class Client {
-
+export default class Client {
   negotiate() {
     pc.addTransceiver("video", { direction: "recvonly" });
     pc.addTransceiver("audio", { direction: "recvonly" });
+
     return pc
       .createOffer()
       .then(function (offer) {
@@ -28,16 +28,67 @@ class Client {
       })
       .then(function () {
         var offer = pc.localDescription;
-        return fetch("http://91.200.84.190/offer", {
-          body: JSON.stringify({
-            sdp: offer.sdp,
-            type: offer.type,
-          }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-          method: "POST",
-        });
+
+		if (document.getElementById('1')) {
+			return fetch("https://hack-solution.live/offer", {
+				body: JSON.stringify({
+				  sdp: offer.sdp,
+				  type: offer.type,
+				  video_id: 1,
+				  video_type: 'common'
+				}),
+				headers: {
+				  "Content-Type": "application/json",
+				},
+				method: "POST",
+			  });
+		}
+
+		if (document.getElementById('1') && document.getElementById('subtitles').hasAttribute('checked')) {
+			return fetch("https://hack-solution.live/offer", {
+				body: JSON.stringify({
+				  sdp: offer.sdp,
+				  type: offer.type,
+				  video_id: 1,
+				  video_type: 'subtitle'
+				}),
+				headers: {
+				  "Content-Type": "application/json",
+				},
+				method: "POST",
+			  });
+		}
+
+		if (document.getElementById('2')) {
+			return fetch("https://hack-solution.live/offer", {
+				body: JSON.stringify({
+				  sdp: offer.sdp,
+				  type: offer.type,
+				  video_id: 2,
+				  video_type: 'common'
+				}),
+				headers: {
+				  "Content-Type": "application/json",
+				},
+				method: "POST",
+			  });
+		}
+		
+		if (document.getElementById('2') && document.getElementById('subtitles').hasAttribute('checked')) {
+			return fetch("https://hack-solution.live/offer", {
+				body: JSON.stringify({
+				  sdp: offer.sdp,
+				  type: offer.type,
+				  video_id: 2,
+				  video_type: 'subtitle'
+				}),
+				headers: {
+				  "Content-Type": "application/json",
+				},
+				method: "POST",
+			  });
+		}
+        
       })
       .then(function (response) {
         return response.json();
@@ -61,7 +112,7 @@ class Client {
       ? document.getElementById("saturation").value
       : 0;
 
-    fetch("http://91.200.84.190/settings", {
+    fetch("https://hack-solution.live/settings", {
       body: JSON.stringify({
         brightness: parseInt(brightness),
         contrast: parseInt(contrast),
@@ -79,7 +130,10 @@ class Client {
       sdpSemantics: "unified-plan",
     };
 
-    if (window.navigator.userAgent.includes('Firefox') || document.getElementById("use-stun").checked) {
+    if (
+      window.navigator.userAgent.includes("Firefox") ||
+      document.getElementById("use-stun").checked
+    ) {
       config.iceServers = [{ urls: ["stun:stun.l.google.com:19302"] }];
     }
 
@@ -89,10 +143,10 @@ class Client {
     pc.addEventListener("track", function (evt) {
       if (evt.track.kind === "video") {
         document.getElementById("video").srcObject = evt.streams[0];
-      } 
-	//   else {
-    //     document.getElementById("audio").srcObject = evt.streams[0];
-    //   }
+      }
+      //   else {
+      //     document.getElementById("audio").srcObject = evt.streams[0];
+      //   }
     });
 
     document.getElementById("start").style.display = "none";
@@ -108,6 +162,4 @@ class Client {
       pc.close();
     }, 500);
   }
-};
-
-export default Client
+}

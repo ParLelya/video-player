@@ -1,12 +1,22 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 import { setIsAuth } from '../slices/userSlice'
 import { RootState } from '../store/store'
+import { DEFAULT_THEME, applyTheme } from './Home'
 
 const User: React.FC = () => {
 
 	const dispatch = useAppDispatch()
 	const { isAuth } = useAppSelector((state: RootState) => state.user)
+
+	useEffect(() => {
+		if (isAuth) {
+			let activeTheme = localStorage.getItem('accessibilityPreset') || DEFAULT_THEME
+			applyTheme(activeTheme)
+		} else {
+			applyTheme(DEFAULT_THEME)
+		}
+	}, [isAuth])
 
 	const [login, setLogin] = useState('')
 	const [pass, setPass] = useState('')

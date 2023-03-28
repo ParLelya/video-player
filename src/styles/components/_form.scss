@@ -3,7 +3,7 @@
 form {
   background: transparent;
   border-radius: 8px;
-  padding: 2rem;
+  padding: 1rem;
   text-align: left;
   width: 80%;
   max-width: 1104px;
@@ -12,81 +12,91 @@ form {
   justify-content: center;
   align-items: center;
 
-	@media only screen and (max-width: 992px) {
-		display: flex;
-		flex-direction: column;
-		flex-wrap: wrap;
-		justify-content: center;
-		width: 100%;
-	}
+  @media only screen and (max-width: 992px) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
 
-	legend {
-		font-size: 1.5rem;
-	}
+  legend {
+    font-size: 1.5rem;
+  }
 
-	p {
-		font-size: 1.2rem;
-		margin: 1rem 2rem;
+  p {
+    font-size: 1.2rem;
+    margin: 1rem 2rem;
 
-		span {
-		margin-left: 1rem;
-		}
+    span {
+      margin-left: 1rem;
+    }
 
-		input[type="range"] {
-		width: 50%;
-		margin: 1rem 1.5rem;
+    input[type="range"] {
+      width: 50%;
+      margin: 1rem 1.5rem;
 
-		@media only screen and (max-width: 992px) {
-			width: 100%;
-			margin: 0.5rem;
-		}
-		}
-	}
+      @media only screen and (max-width: 992px) {
+        width: 100%;
+        margin: 0.5rem;
+      }
+    }
+  }
 
-	select {
-		border: none;
-		color: $white;
-		background: $second;
-		border-radius: 6px;
-		margin: 1rem;
-		padding: 1rem;
-		font-size: 1rem;
-		
-		option {
-			font-size: inherit;
-		}
-	}
+  .colorblind-radio {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
 
-	button {
-		background-color: $gold;
-		color: $primary;
-		border-radius: 8px;
-		padding: 1rem;
-		font-size: 1rem;
+  // select {
+  // 	border: none;
+  // 	color: $white;
+  // 	background: $second;
+  // 	border-radius: 6px;
+  // 	margin: 1rem;
+  // 	padding: 1rem;
+  // 	font-size: 1rem;
 
-		@media only screen and (max-width: 992px) {
-		margin: 0 auto;
-		width: 90%;
-		}
-	}
+  // 	option {
+  // 		font-size: inherit;
+  // 	}
+  // }
 
-	.input-field {
-		width: 100%;
-		margin: 1rem auto;
-		
-		input[type="text"],
-		input[type="password"] {
-			width: 100%;
-			margin: 1rem auto;
-			border: none;
-			padding: 1rem 1.5rem;
-			border-radius: 6px;
-			background: $lightblue;
+  button {
+    background-color: $gold;
+    color: $primary;
+    border-radius: 8px;
+    margin: .5rem auto;
+    padding: 1rem;
+    font-size: 1rem;
+    width: 50%;
 
-			@media only screen and (max-width: 992px) {
-				width: 100%;
-				margin: 0.5rem;
-			}
-		}
-	}
+    @media only screen and (max-width: 992px) {
+      margin: 0.5rem auto;
+      width: 90%;
+    }
+  }
+
+  .input-field {
+    width: 100%;
+    margin: 1rem auto;
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      margin: 1rem auto;
+      border: none;
+      padding: 1rem 1.5rem;
+      border-radius: 6px;
+      background: $lightblue;
+
+      @media only screen and (max-width: 992px) {
+        width: 100%;
+        margin: 0.5rem;
+      }
+    }
+  }
 }

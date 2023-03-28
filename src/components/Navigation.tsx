@@ -13,18 +13,18 @@ const Navigation: React.FC = () => {
 
 			<div className='header'>
 				<Link to="/">
-					<img src='./logo.svg' className='my-logo' alt='logo' />
+					<img src='./logo.svg' className='my-logo' alt='KION logo' />
 				</Link>
 				<nav className="nav hide-on-med-and-down">
 					<Link to="/">
 						Главная
 					</Link>
 
-					<Link to="/mediaplayer">
+					<Link to="/mediaplayer/1">
 						Телеканалы
 					</Link>
 
-					<Link to="/mediaplayer">
+					<Link to="/mediaplayer/2">
 						Фильмы
 					</Link>
 

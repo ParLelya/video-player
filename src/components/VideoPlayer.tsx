@@ -8,18 +8,21 @@ import {
 } from '../slices/colorSlice'
 import { RootState } from '../store/store'
 import Client from '../services/clientService'
+import AccessibilityForm from './AccessibilityForm';
 
 const VideoPlayer: React.FC = () => {
 
 	const media = useMemo(() => new (Client as any)(), [])
 
 	const dispatch = useAppDispatch()
-	const { isAuth, brightnessValue, contrastValue, sharpnessValue, saturationValue } =
+	const { brightnessValue, contrastValue, saturationValue } =
 		useAppSelector((state: RootState) => state.color)
+	const { isAuth } = useAppSelector((state: RootState) => state.user)
 
 	const useStunRef = useRef<HTMLInputElement | null>(null)
 	const stopRef = useRef<HTMLButtonElement | null>(null)
 	const startRef = useRef<HTMLButtonElement | null>(null)
+	const formRef = useRef<HTMLFormElement | null>(null)
 
 	const setBrightness = (event: React.ChangeEvent<HTMLInputElement>): void => {
 		dispatch(setBrightnessValue(Number(event.target.value)))
@@ -42,67 +45,56 @@ const VideoPlayer: React.FC = () => {
 		if (isAuth) {
 			localStorage.setItem('brightnessPreset', String(brightnessValue))
 			localStorage.setItem('contrastPreset', String(contrastValue))
-			localStorage.setItem('sharpnessPreset', String(sharpnessValue))
 			localStorage.setItem('saturationPreset', String(saturationValue))
+			// localStorage.setItem('sharpnessPreset', String(sharpnessValue))
 		}
 		media.test()
 	}
 
+	const openSettings = () => {
+		if (formRef.current?.style.display === 'none') {
+			formRef.current!.style.display = 'flex'
+		} else {
+			formRef.current!.style.display = 'none'
+		}
+	}
+
 	return (
 		<div className='video-player'>
-			<div style={{ display: 'flex' }}>
-				<button
-					ref={startRef}
-					id="start"
-					onClick={() => media.start()}
-				>Старт</button>
-				<button
-					ref={stopRef}
-					id="stop"
-					style={{ display: 'none' }}
-					onClick={() => media.stop()}
-				>Стоп</button>
-				{/* <div style={{ display: 'flex', flexDirection: 'column' }}>
-					<label htmlFor="contrast">контрастность</label>
-					<input
-						id="contrast"
-						placeholder="contrast"
-						type="number"
-					/>
-					<label htmlFor="brightness">яркость</label>
-					<input
-						id="brightness"
-						placeholder="brightness"
-						type="number"
-					/>
-					<label htmlFor="saturation">насыщенность</label>
-					<input
-						id="saturation"
-						placeholder="saturation"
-						type="number"
-					/>
-				</div> */}
-				{/* <button
-					id="test"
-					onClick={() => media.test()}
-				>Тест</button> */}
-			</div>
 			<div id="media">
+				<div style={{ display: 'flex', justifyContent: 'space-between', width: '90%' }}>
+					<button
+						ref={startRef}
+						id="start"
+						onClick={() => media.start()}
+					>Старт</button>
+					<button
+						ref={stopRef}
+						id="stop"
+						style={{ display: 'none' }}
+						onClick={() => media.stop()}
+					>Стоп</button>
+
+					<button
+						id="settings"
+						onClick={openSettings}
+					>Настройки</button>
+				</div>
 				{/* <audio id="audio" autoPlay={true}></audio> */}
 				<video id="video" autoPlay={true} playsInline={true} controls muted loop>
 				</video>
 			</div>
 
-			<form>
+			<form ref={formRef} style={{ display: 'none' }}>
 				<p className="range-field">
 					<label>
 						<span>Настройка яркости</span>
 						<input
-							type="number"
+							type="range"
 							id="brightness"
-							min="1"
-							max="3"
-							step='0.05'
+							min="0"
+							max="100"
+							step='1'
 							onChange={setBrightness}
 						/>
 					</label>
@@ -111,9 +103,9 @@ const VideoPlayer: React.FC = () => {
 					<label>
 						<span>Настройка контрастности</span>
 						<input
-							type="number"
+							type="range"
 							id="contrast"
-							min="1"
+							min="0"
 							max="3"
 							step='0.05'
 							onChange={setContrast}
@@ -124,9 +116,9 @@ const VideoPlayer: React.FC = () => {
 					<label>
 						<span>Настройка насыщенности</span>
 						<input
-							type="number"
+							type="range"
 							id="saturation"
-							min="1"
+							min="0"
 							max="3"
 							step='0.05'
 							onChange={setSaturation}
@@ -137,32 +129,52 @@ const VideoPlayer: React.FC = () => {
 					<label>
 						<span>Настройка резкости</span>
 						<input
-							type="number"
+							type="range"
 							id="sharpness"
-							min="1"
-							max="3"
+							min="0"
+							max="1"
 							step='0.05'
 							onChange={setSharpness}
 							disabled
 						/>
 					</label>
 				</p>
-				<div className="use-stun">
+				<p className="subtitles check">
+					<label>
+						<input
+							type="checkbox"
+							name='access'
+							id='subtitles'
+						/>
+						<span>Включить субтитры</span>
+					</label>
+				</p>
+				<p className="epilepsy check">
+					<label>
+						<input
+							type="checkbox"
+							name='access'
+							id='epilepsy'
+						/>
+						<span>Режим для людей с эпилепсией</span>
+					</label>
+				</p>
+				<p className="use-stun check">
 					<label>
 						<input
 							id="use-stun"
 							type="checkbox"
 							ref={useStunRef}
 						/>
-						STUN сервер
+						<span>STUN сервер</span>
 					</label>
-				</div>
+				</p>
 				<div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
 					<button id="test" type='submit' onClick={handleSubmit}>
 						Применить настройки
 					</button>
 				</div>
-
+				<AccessibilityForm />
 			</form>
 		</div>
 	)
