@@ -29,65 +29,76 @@ export default class Client {
       .then(function () {
         var offer = pc.localDescription;
 
-		if (document.getElementById('1')) {
-			return fetch("https://hack-solution.live/offer", {
-				body: JSON.stringify({
-				  sdp: offer.sdp,
-				  type: offer.type,
-				  video_id: 1,
-				  video_type: 'common'
-				}),
-				headers: {
-				  "Content-Type": "application/json",
-				},
-				method: "POST",
-			  });
-		}
+		return fetch("https://hack-solution.live/offer", {
+					body: JSON.stringify({
+					  sdp: offer.sdp,
+					  type: offer.type,
+					}),
+					headers: {
+					  "Content-Type": "application/json",
+					},
+					method: "POST",
+				  });
 
-		if (document.getElementById('1') && document.getElementById('subtitles').hasAttribute('checked')) {
-			return fetch("https://hack-solution.live/offer", {
-				body: JSON.stringify({
-				  sdp: offer.sdp,
-				  type: offer.type,
-				  video_id: 1,
-				  video_type: 'subtitle'
-				}),
-				headers: {
-				  "Content-Type": "application/json",
-				},
-				method: "POST",
-			  });
-		}
+		// if (document.getElementById('1')) {
+		// 	return fetch("https://hack-solution.live/offer", {
+		// 		body: JSON.stringify({
+		// 		  sdp: offer.sdp,
+		// 		  type: offer.type,
+		// 		  video_id: 1,
+		// 		  video_type: 'common'
+		// 		}),
+		// 		headers: {
+		// 		  "Content-Type": "application/json",
+		// 		},
+		// 		method: "POST",
+		// 	  });
+		// }
 
-		if (document.getElementById('2')) {
-			return fetch("https://hack-solution.live/offer", {
-				body: JSON.stringify({
-				  sdp: offer.sdp,
-				  type: offer.type,
-				  video_id: 2,
-				  video_type: 'common'
-				}),
-				headers: {
-				  "Content-Type": "application/json",
-				},
-				method: "POST",
-			  });
-		}
+		// if (document.getElementById('1') && document.getElementById('subtitles').hasAttribute('checked')) {
+		// 	return fetch("https://hack-solution.live/offer", {
+		// 		body: JSON.stringify({
+		// 		  sdp: offer.sdp,
+		// 		  type: offer.type,
+		// 		  video_id: 1,
+		// 		  video_type: 'subtitle'
+		// 		}),
+		// 		headers: {
+		// 		  "Content-Type": "application/json",
+		// 		},
+		// 		method: "POST",
+		// 	  });
+		// }
+
+		// if (document.getElementById('2')) {
+		// 	return fetch("https://hack-solution.live/offer", {
+		// 		body: JSON.stringify({
+		// 		  sdp: offer.sdp,
+		// 		  type: offer.type,
+		// 		  video_id: 2,
+		// 		  video_type: 'common'
+		// 		}),
+		// 		headers: {
+		// 		  "Content-Type": "application/json",
+		// 		},
+		// 		method: "POST",
+		// 	  });
+		// }
 		
-		if (document.getElementById('2') && document.getElementById('subtitles').hasAttribute('checked')) {
-			return fetch("https://hack-solution.live/offer", {
-				body: JSON.stringify({
-				  sdp: offer.sdp,
-				  type: offer.type,
-				  video_id: 2,
-				  video_type: 'subtitle'
-				}),
-				headers: {
-				  "Content-Type": "application/json",
-				},
-				method: "POST",
-			  });
-		}
+		// if (document.getElementById('2') && document.getElementById('subtitles').hasAttribute('checked')) {
+		// 	return fetch("https://hack-solution.live/offer", {
+		// 		body: JSON.stringify({
+		// 		  sdp: offer.sdp,
+		// 		  type: offer.type,
+		// 		  video_id: 2,
+		// 		  video_type: 'subtitle'
+		// 		}),
+		// 		headers: {
+		// 		  "Content-Type": "application/json",
+		// 		},
+		// 		method: "POST",
+		// 	  });
+		// }
         
       })
       .then(function (response) {
