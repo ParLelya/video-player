@@ -8,8 +8,8 @@
 ## Реализовано
 
 ### Frontend
-[Репозиторий на GitHub](https://github.com/ParLelya/video-player)
-[Деплой сайта](https://true-tech-hack-kion.vercel.app/)
+[Репозиторий на GitHub](https://github.com/ParLelya/video-player) </br>
+[Деплой сайта](https://true-tech-hack-kion.vercel.app/) </br>
 Реализован пользовательский веб-интерфейс, приближенный к оригинальному сайту KION, с помощью Create React App и Redux Toolkit.
 ___
 ***Режим для людей с дальтонизмом***: мы смогли охватить такие его разновидности, как протанопия, дейтеранопия, тританопия.
@@ -23,7 +23,7 @@ ___
 ___
 
 ### Backend
-[Репозиторий на GitHub](https://github.com/Cirilus/TrueTechHack)
+[Репозиторий на GitHub](https://github.com/Cirilus/TrueTechHack) </br>
 ***subtitles_demo.py*** - использует SDK pvleopard для преобразования Speech to Text, он это делает один раз,
 как только файл попал на сервер, сохраняет разметку, и после того как пользователь запросил видео с субтитрами,
 отображает их при помощи библиотеки moviepy.
