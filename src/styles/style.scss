@@ -34,7 +34,9 @@ body {
     span,
     label,
     i,
-    li {
+    li,
+    h3,
+    h4 {
       font-size: 1.7rem !important;
     }
 
@@ -50,17 +52,17 @@ body {
     span.contacts,
     span.copyright,
     .help ul li a,
-    .links ul li a {
+    .links ul li a,
+    h5,
+    h6 {
       font-size: 1.5rem !important;
     }
 
-	@media only screen and (max-width: 992px) {
-		.nav-mobile a {
-			font-size: .8rem !important;
-		}
-	}
-
-	
+    @media only screen and (max-width: 992px) {
+      .nav-mobile a {
+        font-size: 0.8rem !important;
+      }
+    }
 
     .login {
       width: 40% !important;

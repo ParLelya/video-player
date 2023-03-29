@@ -726,7 +726,9 @@ body.fz-increase p,
 body.fz-increase span,
 body.fz-increase label,
 body.fz-increase i,
-body.fz-increase li {
+body.fz-increase li,
+body.fz-increase h3,
+body.fz-increase h4 {
   font-size: 1.7rem !important;
 }
 body.fz-increase button {
@@ -740,7 +742,9 @@ body.fz-increase nav a,
 body.fz-increase span.contacts,
 body.fz-increase span.copyright,
 body.fz-increase .help ul li a,
-body.fz-increase .links ul li a {
+body.fz-increase .links ul li a,
+body.fz-increase h5,
+body.fz-increase h6 {
   font-size: 1.5rem !important;
 }
 @media only screen and (max-width: 992px) {
