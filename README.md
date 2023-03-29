@@ -1,46 +1,64 @@
-# Getting Started with Create React App
+# Quick start
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
+Склонировать репозиторий
+### `npm install`
+Запуск в браузере на [http://localhost:3000](http://localhost:3000)
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Реализовано
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Frontend
+[Репозиторий на GitHub](https://github.com/ParLelya/video-player)
+[Деплой сайта](https://true-tech-hack-kion.vercel.app/)
+Реализован пользовательский веб-интерфейс, приближенный к оригинальному сайту KION, с помощью Create React App и Redux Toolkit.
+___
+***Режим для людей с дальтонизмом***: мы смогли охватить такие его разновидности, как протанопия, дейтеранопия, тританопия.
+Также есть контрастный черно-белый вариант. Все цветовые режимы применяются ко всем элементам, включая текст, баннеры, видео и картинки.
+___
+***Режим для слабовидящих***: увеличинеие шрифта и размеров некоторых блоков.
+___
+***Сохранение настроек***: для авторизованных пользователей сохраняются последние выбранные настройки.
+___
+***3 слота для пресетов на одном аккаунте***: чтобы каждый член семьи мог сделать настройки под себя и потом быстро к ним вернуться.
+___
 
-### `npm test`
+### Backend
+[Репозиторий на GitHub](https://github.com/Cirilus/TrueTechHack)
+***subtitles_demo.py*** - использует SDK pvleopard для преобразования Speech to Text, он это делает один раз,
+как только файл попал на сервер, сохраняет разметку, и после того как пользователь запросил видео с субтитрами,
+отображает их при помощи библиотеки moviepy.
+___
+***handlers.py*** - находит кадры, которые могут вызвать эпилептические припадки. Он строит гистограмму интенсивности
+для каждого кадра, потом их сравнивает. Если значение больше какого-то порога, то он ставит метку.
+Когда пользователь запросит видео с вырезанными эпилептическими сценами, мы не будем обрабатывать все видео,
+мы будем просто ориентироваться на заранее проставленные метки и просто проводить обработку.
+___
+***main.py*** - сервер. Он использует протокол webrtc для параллельной отправки видео и аудио.
+Перед отправкой он производит предварительную обработку видео.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Что будет реализовано
+Так как в рамках хакатона не всё возможно реализовать, тут представлены идеи нашей команды:
 
-### `npm run build`
+### Улучшение эпилептической обработки
+При вырезании сцены теряется большая часть информативности этого кадра, а в последствие и фильма,
+так что появилась идея распределять всю контрастность между ниже стоящими кадрами. То есть у нас есть
+условно 4 кадра с контрастностью 15 - 15 - 15 - 100, и разница между контрастностью может быть только 15,
+следовательно, мы проводим такую обработку: 30 - 30 - 30 - 45. Конечно, при такой обработке будут теряться цветопередача
+и контрастность, но это будет вызывать минимальные проблемы у людей, имеющих диагноз эпилепсия.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Добавление работы с потоком видео
+KION также предоставляет возможность просматривать телевизионные каналы, и их обработкой тоже нужно заниматься.
+Наша идея заключается в том, что у нас будет задержка перед показом, то есть нам телеканал передает видео, но
+должна быть задержка примерно 5 минут. Мы обрабатываем всеми возможными обработками и храним их в оперативной памяти.
+Как только прошёл этот кадр, то мы удаляем его из памяти параллельно добавляя новые. Эта идея так же будет работать
+в real time, но будет некоторая задержка.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Реализовать аудио-обработку
+Резкий звук также может вызвать эпилептический припадок или приступы у людей с нервными расстройствами, так что нам
+надо определять скачики и их нормализировать. Это также можно сделать с помощью предобработки и разметки.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Оценка опасности видео и предупреждения
+Мы предлагаем ввести метрику оценки опасности видео, основываясь на количестве эпилептически опасных моментов, например:
+"безопасно", "есть риски", "опасный", "не рекомендуем к просмотру". Также есть люди, которые переносят эпилепсию в легкой форме
+или которым не нравится резкая смена цветов и контрастности, и для таких людей можно ввести не вырезание или обработку кадров,
+а предупреждение (alert). Оно будет появляться за n секунд до и предупреждать пользователя о потенциальном нежелательном моменте.
