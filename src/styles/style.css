@@ -532,6 +532,8 @@ form .input-field input[type=password] {
   align-items: center;
   flex-direction: column;
   width: 50%;
+  height: -moz-max-content;
+  height: max-content;
   margin: 1rem 0;
   align-self: flex-end;
 }
@@ -756,6 +758,24 @@ body.fz-increase h6 {
   }
   body.fz-increase input[type=range] {
     width: 30%;
+  }
+  body.fz-increase .my-profile-name {
+    height: -moz-max-content;
+    height: max-content;
+  }
+  body.fz-increase .my-profile-name label {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  body.fz-increase .my-profile-name label span {
+    margin: 0.5rem auto;
+  }
+  body.fz-increase .my-profile-name .presets {
+    width: 100%;
+  }
+  body.fz-increase .my-profile-name .presets .preset-btn {
+    height: 5vh !important;
   }
 }
 body.fz-increase .login {

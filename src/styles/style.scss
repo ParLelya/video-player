@@ -66,6 +66,28 @@ body {
       input[type="range"] {
         width: 30%;
       }
+
+      .my-profile-name {
+        height: max-content;
+
+        label {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+
+          span {
+            margin: 0.5rem auto;
+          }
+        }
+
+        .presets {
+          width: 100%;
+
+          .preset-btn {
+            height: 5vh !important;
+          }
+        }
+      }
     }
 
     .login {
