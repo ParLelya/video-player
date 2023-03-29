@@ -36,6 +36,14 @@ const VideoPlayer: React.FC = () => {
 			// dispatchsetsharpnessValue(Number(localStorage.getItem('sharpnessPreset'))))
 			dispatch(setSubtitles(!!localStorage.getItem('subtitles')))
 			dispatch(setNoEpilepsy(!!localStorage.getItem('noEpilepsy')))
+
+		if (subtitles) {
+			subsRef.current!.checked = true
+		}
+
+		if (noEpilepsy) {
+			noEpilepsyRef.current!.checked = true
+		}
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isAuth])
