@@ -555,7 +555,7 @@ form .input-field input[type=password] {
   align-items: center;
   flex-wrap: wrap;
   width: 60%;
-  height: 65vh;
+  height: 80vh;
   background: rgb(18, 40, 64);
   border-radius: 8px;
 }
@@ -568,6 +568,7 @@ form .input-field input[type=password] {
 }
 .video-player #media video {
   width: 100%;
+  max-height: 90%;
 }
 .video-player #start,
 .video-player #stop,

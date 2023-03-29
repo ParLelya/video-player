@@ -29,77 +29,69 @@ export default class Client {
       .then(function () {
         var offer = pc.localDescription;
 
-		return fetch("https://hack-solution.tech/offer", {
-					body: JSON.stringify({
-					  sdp: offer.sdp,
-					  type: offer.type,
-					}),
-					headers: {
-					  "Content-Type": "application/json",
-					},
-					method: "POST",
-				  });
+        if (
+          document.getElementById("1") &&
+          document.getElementById("subtitles").checked
+        ) {
+          return fetch("https://hack-solution.tech/offer", {
+            body: JSON.stringify({
+              sdp: offer.sdp,
+              type: offer.type,
+              video_id: 1,
+              video_type: "subtitle",
+            }),
+            headers: {
+              "Content-Type": "application/json",
+            },
+            method: "POST",
+          });
+        }
+        if (document.getElementById("1")) {
+          return fetch("https://hack-solution.tech/offer", {
+            body: JSON.stringify({
+              sdp: offer.sdp,
+              type: offer.type,
+              video_id: 1,
+              video_type: "common",
+            }),
+            headers: {
+              "Content-Type": "application/json",
+            },
+            method: "POST",
+          });
+        }
 
-		// if (document.getElementById('1')) {
-		// 	return fetch("https://hack-solution.tech/offer", {
-		// 		body: JSON.stringify({
-		// 		  sdp: offer.sdp,
-		// 		  type: offer.type,
-		// 		  video_id: 1,
-		// 		  video_type: 'common'
-		// 		}),
-		// 		headers: {
-		// 		  "Content-Type": "application/json",
-		// 		},
-		// 		method: "POST",
-		// 	  });
-		// }
-
-		// if (document.getElementById('1') && document.getElementById('subtitles').hasAttribute('checked')) {
-		// 	return fetch("https://hack-solution.tech/offer", {
-		// 		body: JSON.stringify({
-		// 		  sdp: offer.sdp,
-		// 		  type: offer.type,
-		// 		  video_id: 1,
-		// 		  video_type: 'subtitle'
-		// 		}),
-		// 		headers: {
-		// 		  "Content-Type": "application/json",
-		// 		},
-		// 		method: "POST",
-		// 	  });
-		// }
-
-		// if (document.getElementById('2')) {
-		// 	return fetch("https://hack-solution.tech/offer", {
-		// 		body: JSON.stringify({
-		// 		  sdp: offer.sdp,
-		// 		  type: offer.type,
-		// 		  video_id: 2,
-		// 		  video_type: 'common'
-		// 		}),
-		// 		headers: {
-		// 		  "Content-Type": "application/json",
-		// 		},
-		// 		method: "POST",
-		// 	  });
-		// }
-		
-		// if (document.getElementById('2') && document.getElementById('subtitles').hasAttribute('checked')) {
-		// 	return fetch("https://hack-solution.tech/offer", {
-		// 		body: JSON.stringify({
-		// 		  sdp: offer.sdp,
-		// 		  type: offer.type,
-		// 		  video_id: 2,
-		// 		  video_type: 'subtitle'
-		// 		}),
-		// 		headers: {
-		// 		  "Content-Type": "application/json",
-		// 		},
-		// 		method: "POST",
-		// 	  });
-		// }
-        
+        if (
+          document.getElementById("2") &&
+          document.getElementById("epilepsy").checked
+        ) {
+          return fetch("https://hack-solution.tech/offer", {
+            body: JSON.stringify({
+              sdp: offer.sdp,
+              type: offer.type,
+              video_id: 2,
+              video_type: "epilepsy",
+            }),
+            headers: {
+              "Content-Type": "application/json",
+            },
+            method: "POST",
+          });
+        }
+        if (document.getElementById("2")) {
+          return fetch("https://hack-solution.tech/offer", {
+            body: JSON.stringify({
+              sdp: offer.sdp,
+              type: offer.type,
+              video_id: 2,
+              video_type: "common",
+            }),
+            headers: {
+              "Content-Type": "application/json",
+            },
+            method: "POST",
+          });
+        }
       })
       .then(function (response) {
         return response.json();
@@ -169,7 +161,7 @@ export default class Client {
     document.getElementById("stop").style.display = "none";
     document.getElementById("start").style.display = "inline-block";
     // close peer connection
-    setTimeout(function () {
+    setTimeout(() => {
       pc.close();
     }, 500);
   }

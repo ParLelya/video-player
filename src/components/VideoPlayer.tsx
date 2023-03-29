@@ -84,6 +84,14 @@ const VideoPlayer: React.FC = () => {
 		media.test()
 	}
 
+	const turnOnSubs = () => {
+		dispatch(setSubtitles(!subtitles))
+	}
+
+	const turnOnNoEpilepsy = () => {
+		dispatch(setNoEpilepsy(!noEpilepsy))
+	}
+
 	const savePreset1 = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
 		event.preventDefault()
 		localStorage.setItem('myPreset1', saveSettings().join(','))
@@ -102,7 +110,7 @@ const VideoPlayer: React.FC = () => {
 	return (
 		<div className='video-player'>
 			<div id="media">
-				<div style={{ display: 'flex', justifyContent: 'space-between', width: '90%' }}>
+				<div style={{ display: 'flex', justifyContent: 'space-between', width: '90%', height: '10%', justifySelf: 'flex-start' }}>
 					<button
 						ref={startRef}
 						id="start"
@@ -121,7 +129,7 @@ const VideoPlayer: React.FC = () => {
 					>Настройки</button>
 				</div>
 				{/* <audio id="audio" autoPlay={true}></audio> */}
-				<video id="video" autoPlay={true} playsInline={true} controls muted loop>
+				<video id="video" autoPlay={true} playsInline={true} controls>
 				</video>
 			</div>
 
@@ -186,7 +194,7 @@ const VideoPlayer: React.FC = () => {
 							name='access'
 							id='subtitles'
 							ref={subsRef}
-							onChange={() => setSubtitles(!subtitles)}
+							onChange={turnOnSubs}
 						/>
 						<span>Включить субтитры</span>
 					</label>
@@ -198,7 +206,7 @@ const VideoPlayer: React.FC = () => {
 							name='access'
 							id='epilepsy'
 							ref={noEpilepsyRef}
-							onChange={() => setNoEpilepsy(!noEpilepsy)}
+							onChange={turnOnNoEpilepsy}
 						/>
 						<span>Режим для людей с эпилепсией</span>
 					</label>
