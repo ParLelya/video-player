@@ -743,6 +743,11 @@ body.fz-increase .help ul li a,
 body.fz-increase .links ul li a {
   font-size: 1.5rem !important;
 }
+@media only screen and (max-width: 992px) {
+  body.fz-increase .nav-mobile a {
+    font-size: 0.8rem !important;
+  }
+}
 body.fz-increase .login {
   width: 40% !important;
 }
