@@ -34,7 +34,6 @@
     background-color: $second;
     border-radius: 8px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -42,6 +41,7 @@
     @media only screen and (max-width: 992px) {
       width: 100%;
       margin: 1rem 0;
+	  height: max-content;
     }
 
     label {
@@ -49,6 +49,7 @@
 
       @media only screen and (max-width: 992px) {
         width: 100%;
+		font-size: .8rem;
         margin: 1rem auto;
       }
 
@@ -67,6 +68,7 @@
       flex-direction: column;
       width: 50%;
       margin: 1rem 0;
+      align-self: flex-end;
 
       @media only screen and (max-width: 992px) {
         width: 100%;

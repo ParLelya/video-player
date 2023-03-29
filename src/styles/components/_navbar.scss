@@ -27,6 +27,9 @@ header {
     }
     img.my-logo {
       padding: 17px;
+      @media screen and (max-width: 992px) {
+        margin: 1rem 0;
+      }
     }
 
     .nav {
@@ -70,7 +73,7 @@ header {
       align-items: center;
 
       @media screen and (min-width: 1100px) {
-		display: flex;
+        display: flex;
         margin: 1.5rem;
       }
 
@@ -108,10 +111,10 @@ nav.nav-mobile {
     display: inline-block;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 24px;
     padding: 23px 8px;
-	border-bottom: 2px solid rgba(18, 40, 64, 0.85);
+    border-bottom: 2px solid rgba(18, 40, 64, 0.85);
 
     &:hover,
     &:active {

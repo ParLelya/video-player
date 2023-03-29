@@ -118,7 +118,7 @@ const VideoPlayer: React.FC = () => {
 	return (
 		<div className='video-player'>
 			<div id="media">
-				<div style={{ display: 'flex', justifyContent: 'space-between', width: '90%', height: '10%', justifySelf: 'flex-start' }}>
+				<div style={{ display: 'flex', justifyContent: 'space-between', width: '90%', height: '10%', alignSelf: 'flex-start' }}>
 					<button
 						ref={startRef}
 						id="start"
