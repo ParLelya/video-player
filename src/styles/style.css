@@ -182,6 +182,8 @@ nav.nav-mobile {
   position: fixed;
   background-color: rgba(18, 40, 64, 0.85);
   z-index: 100;
+  display: flex;
+  justify-content: space-between;
 }
 nav.nav-mobile a {
   display: inline-block;
@@ -189,7 +191,7 @@ nav.nav-mobile a {
   font-weight: 400;
   font-size: 0.7rem;
   line-height: 24px;
-  padding: 23px 8px;
+  padding: 20px 8px;
   border-bottom: 2px solid rgba(18, 40, 64, 0.85);
 }
 nav.nav-mobile a:hover, nav.nav-mobile a:active {
