@@ -64,8 +64,6 @@ const VideoPlayer: React.FC = () => {
 		dispatch(setSaturationValue(Number(event.target.value)))
 	}
 
-
-
 	const saveSettings = () => {
 		localStorage.setItem('brightnessPreset', String(brightnessValue))
 		localStorage.setItem('contrastPreset', String(contrastValue))

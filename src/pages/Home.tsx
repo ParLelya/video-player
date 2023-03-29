@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { useAppSelector } from '../hooks/hooks'
+import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 import { RootState } from '../store/store'
 
 export const DEFAULT_THEME = 'default'
@@ -12,6 +12,7 @@ export function applyTheme(theme: string) {
 
 const Home: React.FC = () => {
 
+	const dispatch = useAppDispatch()
 	const { isAuth } = useAppSelector((state: RootState) => state.user)
 
 	useEffect(() => {
