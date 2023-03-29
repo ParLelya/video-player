@@ -10,7 +10,9 @@ import {
 } from '../slices/colorSlice'
 import { RootState } from '../store/store'
 import Client from '../services/clientService'
-import AccessibilityForm from './AccessibilityForm';
+import AccessibilityForm from './AccessibilityForm'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const VideoPlayer: React.FC = () => {
 
@@ -37,13 +39,13 @@ const VideoPlayer: React.FC = () => {
 			dispatch(setSubtitles(!!localStorage.getItem('subtitles')))
 			dispatch(setNoEpilepsy(!!localStorage.getItem('noEpilepsy')))
 
-		if (subtitles) {
-			subsRef.current!.checked = true
-		}
+			if (subtitles) {
+				subsRef.current!.checked = true
+			}
 
-		if (noEpilepsy) {
-			noEpilepsyRef.current!.checked = true
-		}
+			if (noEpilepsy) {
+				noEpilepsyRef.current!.checked = true
+			}
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isAuth])
@@ -103,16 +105,19 @@ const VideoPlayer: React.FC = () => {
 	const savePreset1 = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
 		event.preventDefault()
 		localStorage.setItem('myPreset1', saveSettings().join(','))
+		toast.success('🦄 успешно сохранено!')
 	}
 
 	const savePreset2 = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
 		event.preventDefault()
 		localStorage.setItem('myPreset2', saveSettings().join(','))
+		toast.success('🦄 успешно сохранено!')
 	}
 
 	const savePreset3 = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
 		event.preventDefault()
 		localStorage.setItem('myPreset3', saveSettings().join(','))
+		toast.success('🦄 успешно сохранено!')
 	}
 
 	return (
@@ -268,6 +273,18 @@ const VideoPlayer: React.FC = () => {
 						: <h4 style={{ textAlign: 'center' }}>Войдите в профиль, чтобы сохранить пресеты настроек</h4>
 				}
 			</form>
+			<ToastContainer
+				position="bottom-center"
+				autoClose={5000}
+				hideProgressBar={false}
+				newestOnTop={true}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+				theme="dark"
+			/>
 		</div>
 	)
 }

@@ -114,10 +114,14 @@ nav.nav-mobile {
     display: inline-block;
     font-style: normal;
     font-weight: 400;
-    font-size: 0.7rem;
+    font-size: 1rem;
     line-height: 24px;
     padding: 20px 8px;
     border-bottom: 2px solid rgba(18, 40, 64, 0.85);
+
+	@media screen and (max-width: 992px) {
+        font-size: .7rem;
+      }
 
     &:hover,
     &:active {

@@ -190,10 +190,15 @@ nav.nav-mobile a {
   display: inline-block;
   font-style: normal;
   font-weight: 400;
-  font-size: 0.7rem;
+  font-size: 1rem;
   line-height: 24px;
   padding: 20px 8px;
   border-bottom: 2px solid rgba(18, 40, 64, 0.85);
+}
+@media screen and (max-width: 992px) {
+  nav.nav-mobile a {
+    font-size: 0.7rem;
+  }
 }
 nav.nav-mobile a:hover, nav.nav-mobile a:active {
   color: rgb(186, 157, 90);
@@ -501,13 +506,13 @@ form .input-field input[type=password] {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  height: -moz-max-content;
+  height: max-content;
 }
 @media only screen and (max-width: 992px) {
   .profile .my-profile-name {
     width: 100%;
     margin: 1rem 0;
-    height: -moz-max-content;
-    height: max-content;
   }
 }
 .profile .my-profile-name label {

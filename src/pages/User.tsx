@@ -10,6 +10,8 @@ import {
 	setSubtitles,
 	setNoEpilepsy
 } from '../slices/colorSlice'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const User: React.FC = () => {
 
@@ -61,6 +63,7 @@ const User: React.FC = () => {
 		// dispatch(setsharpnessValue(Number(localStorage.getItem('myPreset1')?.split(',')[])))
 		dispatch(setSubtitles(!!localStorage.getItem('myPreset1')?.split(',')[3]))
 		dispatch(setNoEpilepsy(!!localStorage.getItem('myPreset1')?.split(',')[4]))
+		toast.success('🦄 успешно установлено!');
 	}
 
 	const setPreset2 = () => {
@@ -70,6 +73,7 @@ const User: React.FC = () => {
 		// dispatch(setsharpnessValue(Number(localStorage.getItem('myPreset2')?.split(',')[])))
 		dispatch(setSubtitles(!!localStorage.getItem('myPreset2')?.split(',')[3]))
 		dispatch(setNoEpilepsy(!!localStorage.getItem('myPreset2')?.split(',')[4]))
+		toast.success('🦄 успешно установлено!');
 	}
 
 	const setPreset3 = () => {
@@ -79,6 +83,7 @@ const User: React.FC = () => {
 		// dispatch(setsharpnessValue(Number(localStorage.getItem('myPreset3')?.split(',')[])))
 		dispatch(setSubtitles(!!localStorage.getItem('myPreset3')?.split(',')[3]))
 		dispatch(setNoEpilepsy(!!localStorage.getItem('myPreset3')?.split(',')[4]))
+		toast.success('🦄 успешно установлено!');
 	}
 
 	return (
@@ -142,6 +147,18 @@ const User: React.FC = () => {
 						</form>
 					)
 			}
+			<ToastContainer
+				position="bottom-center"
+				autoClose={5000}
+				hideProgressBar={true}
+				newestOnTop={true}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+				theme="dark"
+			/>
 		</div>
 	)
 }
