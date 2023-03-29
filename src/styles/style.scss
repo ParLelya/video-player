@@ -62,6 +62,10 @@ body {
       .nav-mobile a {
         font-size: 0.8rem !important;
       }
+
+      input[type="range"] {
+        width: 30%;
+      }
     }
 
     .login {

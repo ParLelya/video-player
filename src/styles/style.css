@@ -751,6 +751,9 @@ body.fz-increase h6 {
   body.fz-increase .nav-mobile a {
     font-size: 0.8rem !important;
   }
+  body.fz-increase input[type=range] {
+    width: 30%;
+  }
 }
 body.fz-increase .login {
   width: 40% !important;
